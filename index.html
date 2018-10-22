@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Helix Preset Viewer</title>
+    <!-- development version, includes helpful console warnings -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        body {
+            color: #ccc;
+            background-color: #000;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        
+        a:link {
+            color: #ccc;
+        }
+        
+        a:hover {
+            color: #fff;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .header {
+            width: 80%;
+            margin: 50px auto;
+        }
+        
+        .footer {
+            font-size: 14px;
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        .path {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 50px;
+            min-height: 70px;
+        }
+        
+        .path::before {
+            content: " ";
+            width: 100%;
+            position: absolute;
+            height: 1px;
+            background-color: #ccc;
+            top: 40%;
+        }
+
+        .block {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 0 20px;
+            background-color: #000;
+            z-index: 5;
+        }
+
+        .block__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 5px auto;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 24px;
+        }
+
+        .block__name {
+            font-size: 12px;
+        }
+        
+        .block__icon--active {
+            border-color: #fff;
+        }
+
+        .block--amp,
+        .block--preamp,
+        .block--amp-cab,
+        .block--cab {
+            color: darkred;
+        }
+        
+        .block--ir {
+            color: hotpink;
+        }
+
+        .block--dist {
+            color: orange;
+        }
+
+        .block--comp,
+        .block--eq {
+            color: yellow;
+        }
+
+        .block--delay {
+            color: forestgreen;
+        }
+        
+        .block--mod {
+            color: royalblue;
+        }
+        
+        .block--reverb {
+            color: orangered;
+        }
+        
+        .block--filter,
+        .block--pitch,
+        .block--wah {
+            color: purple;
+        }
+        
+        .block--vol-pan,
+        .block--send-return {
+            color: deepskyblue;
+        }
+        
+        .block--looper {
+            color: #ccc;
+        }
+        
+        .parameters {
+            font-size: 16px;
+            background-color: #111;
+            margin: 0 auto;
+        }
+        
+        .parameters th {
+            padding: 15px;
+            text-align: left;
+            background-color: #222;
+        }
+        
+        .parameters td {
+            padding: 8px 15px;
+            text-align: left;
+            background-color: #333;
+        }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="container">
+            <div class="header">
+                <h1>Helix Preset Viewer</h1>
+                <p>You can use this tool to view Helix preset details without having your hardware connected.</p>
+                <ul>
+                    <li>Select "Choose File" to browse your computer and load a .hlx file.</li>
+                    <li>Click on the effects block to view its settings.</li>
+                </ul>
+                <input type="file" @change="onFileChange">
+                <p>Note: This is very much a work in progress. Currently this tool has the following limitations:</p>
+                <ul>
+                    <li>Only displays blocks on the first path of the preset.</li>
+                    <li>Doesn't render correct signal flow or block order.</li>
+                    <li>Lots of missing model data - you will see an asterisk (*) next to items that are not mapped at the moment (though you can still view the blocks parameters and probably figure out which one it is in the meantime).</li>
+                    <li>Some of the parameter data is a little raw (true/false instead of on/off, number formatting, etc).</li>
+                    <li>Could be other bugs!</li>
+                </ul>
+            </div>
+            <div v-if="preset.data.meta.name === 'No Preset Loaded'" class="preset preset--default">
+                <div class="path">
+                    <block type="dist"></block>
+                    <block type="comp"></block>
+                    <block type="eq"></block>
+                    <block type="mod"></block>
+                    <block type="delay"></block>
+                    <block type="reverb"></block>
+                    <block type="pitch"></block>
+                    <block type="filter"></block>
+                </div>
+                <div class="path">
+                    <block type="wah"></block>
+                    <block type="amp-cab"></block>
+                    <block type="amp"></block>
+                    <block type="preamp"></block>
+                    <block type="cab"></block>
+                    <block type="ir"></block>
+                    <block type="vol-pan"></block>
+                    <block type="send-return"></block>
+                    <block type="looper"></block>
+                </div>
+            </div>
+            
+            <h2>Preset Name: {{ preset.data.meta.name }}</h2>
+            
+            <div class="path">
+                <block     
+                    v-for="(value, key) in preset.data.tone.dsp0" 
+                    v-if="key.startsWith('block')" 
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value">
+                </block>
+            </div>
+            
+            <parameters v-bind:block="currentBlock"></parameters>
+            
+            <div class="footer">
+                <p>Created by <a href="https://www.youtube.com/user/dbagchee">Dipendra Bagchee</a> | Icons by <a href="https://fontawesome.com/">Font Awesome</a></p>
+            </div>
+        </div>
+        
+        <template v-if="ok" id="parameters">
+            <table class="parameters">
+                <tr v-for="(value,key) in block" v-if="key === '@model'">
+                    <th>{{ key | getLabel }}</th><th> {{ value | getModel('name') }}</th>
+                </tr>
+                <tr v-for="(value,key) in block" v-if="key !== '@model' && key !== '@path' && key !== 'Voice' && key !== '@type' && key !== '@bypassvolume' && key !== '@cab' && key !== '@enabled' && key !== 'SSwitch'">
+                    <td>{{ key | getLabel }}</td><td> {{ value }} </td>
+                </tr>    
+            </table>
+        </template>
+        
+        <template v-if="ok" id="block">
+            <div v-on:click="displayParameters(id)" v-if="type === 'delay'" class="block block--delay">
+                <div class="block__icon">
+                    <icon-delay></icon-delay>
+                </div>
+                <div class="block__name">Delay</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'dist'" class="block block--dist">
+                <div class="block__icon">
+                    <icon-dist></icon-dist>
+                </div>
+                <div class="block__name">Dist</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'eq'" class="block block--eq">
+                <div class="block__icon">
+                    <icon-eq></icon-eq>
+                </div>
+                <div class="block__name">EQ</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'amp'" class="block block--amp">
+                <div class="block__icon">
+                    <icon-amp></icon-amp>
+                </div>
+                <div class="block__name">Amp</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'preamp'" class="block block--preamp">
+                <div class="block__icon">
+                    <icon-preamp></icon-preamp>
+                </div>
+                <div class="block__name">Pre</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'amp-cab'" class="block block--preamp">
+                <div class="block__icon">
+                    <icon-amp-cab></icon-amp-cab>
+                </div>
+                <div class="block__name">Amp+Cab</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'cab'" class="block block--preamp">
+                <div class="block__icon">
+                    <icon-cab></icon-cab>
+                </div>
+                <div class="block__name">Cab</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'ir'" class="block block--ir">
+                <div class="block__icon">
+                    <icon-ir></icon-ir>
+                </div>
+                <div class="block__name">IR</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'wah'" class="block block--wah">
+                <div class="block__icon">
+                    <icon-wah></icon-wah>
+                </div>
+                <div class="block__name">Wah</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'pitch'" class="block block--pitch">
+                <div class="block__icon">
+                    <icon-pitch></icon-pitch>
+                </div>
+                <div class="block__name">Pitch</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'filter'" class="block block--filter">
+                <div class="block__icon">
+                    <icon-filter></icon-filter>
+                </div>
+                <div class="block__name">Filter</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'comp'" class="block block--comp">
+                <div class="block__icon">
+                    <icon-comp></icon-comp>
+                </div>
+                <div class="block__name">Dyn</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'mod'" class="block block--mod">
+                <div class="block__icon">
+                    <icon-mod></icon-mod>
+                </div>
+                <div class="block__name">Mod</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'reverb'" class="block block--reverb">
+                <div class="block__icon">
+                    <icon-reverb></icon-reverb>
+                </div>
+                <div class="block__name">Verb</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'vol-pan'" class="block block--vol-pan">
+                <div class="block__icon">
+                    <icon-vol-pan></icon-vol-pan>
+                </div>
+                <div class="block__name">Vol/Pan</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'send-return'" class="block block--send-return">
+                <div class="block__icon">
+                    <icon-send-return></icon-send-return>
+                </div>
+                <div class="block__name">Send/Return</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else-if="type === 'looper'" class="block block--looper">
+                <div class="block__icon">
+                    <icon-looper></icon-looper>
+                </div>
+                <div class="block__name">Looper</div>
+            </div>
+            <div v-on:click="displayParameters(id)" v-else class="block">
+                <div class="block__icon">
+                    
+                </div>
+                <div class="block__name">None{{ type }}</div>
+            </div>
+        </template> 
+    </div>
+
+    <script>
+        var hxPreset = {
+            "data": {
+                "device": 2162694,
+                "device_version": 40894464,
+                "meta": {
+                    "application": "HX Edit",
+                    "appversion": 40894464,
+                    "build_sha": "5dc01f9",
+                    "modifieddate": 1539979165,
+                    "name": "No Preset Loaded"
+                },
+                "tone": {
+                    "dsp0": {
+                        
+                        "cab0": {
+                            "@enabled": true,
+                            "@mic": 0,
+                            "@model": "HD2_Cab4X12CaliV30",
+                            "Distance": 1.0,
+                            "EarlyReflections": 0.0,
+                            "HighCut": 20100.0,
+                            "Level": 0.0,
+                            "LowCut": 19.90
+                        },
+                        "inputA": {
+                            "@input": 1,
+                            "@model": "HelixStomp_AppDSPFlowInput",
+                            "decay": 0.50,
+                            "noiseGate": true,
+                            "threshold": -48.0
+                        },
+                        "inputB": {
+                            "@input": 0,
+                            "@model": "HelixStomp_AppDSPFlowInput",
+                            "decay": 0.50,
+                            "noiseGate": false,
+                            "threshold": -48.0
+                        },
+                        "join": {
+                            "@enabled": true,
+                            "@model": "HD2_AppDSPFlowJoin",
+                            "@position": 6,
+                            "A Level": 0.0,
+                            "A Pan": 0.50,
+                            "B Level": 0.0,
+                            "B Pan": 0.50,
+                            "B Polarity": false,
+                            "Level": 0.0
+                        },
+                        "outputA": {
+                            "@model": "HelixStomp_AppDSPFlowOutputMain",
+                            "@output": 1,
+                            "gain": 0.0,
+                            "pan": 0.50
+                        },
+                        "outputB": {
+                            "@model": "HelixStomp_AppDSPFlowOutputSend",
+                            "@output": 0,
+                            "Type": true,
+                            "gain": 0.0,
+                            "pan": 0.50
+                        },
+                        "split": {
+                            "@enabled": true,
+                            "@model": "HD2_AppDSPFlowSplitY",
+                            "@position": 0,
+                            "BalanceA": 0.50,
+                            "BalanceB": 0.50,
+                            "bypass": false
+                        }
+                    },
+                    "dsp1": {},
+                    "footswitch": {
+                        "dsp0": {
+                            "block2": {
+                                "@fs_enabled": false,
+                                "@fs_index": 2,
+                                "@fs_label": "Simple Delay",
+                                "@fs_ledcolor": 67840,
+                                "@fs_momentary": false,
+                                "@fs_primary": true
+                            }
+                        }
+                    },
+                    "global": {
+                        "@current_snapshot": 0,
+                        "@cursor_dsp": 0,
+                        "@cursor_group": "block1",
+                        "@cursor_path": 0,
+                        "@cursor_position": 2,
+                        "@guitarinputZ": 0,
+                        "@model": "@global_params",
+                        "@pedalstate": 2,
+                        "@tempo": 120.0,
+                        "@topology0": "A",
+                        "@topology1": 0,
+                        "@variax_customtuning": true,
+                        "@variax_lockctrls": 0,
+                        "@variax_magmode": false,
+                        "@variax_model": 0,
+                        "@variax_str1tuning": 0,
+                        "@variax_str2tuning": 0,
+                        "@variax_str3tuning": 0,
+                        "@variax_str4tuning": 0,
+                        "@variax_str5tuning": 0,
+                        "@variax_str6tuning": 0,
+                        "@variax_toneknob": -0.10,
+                        "@variax_volumeknob": -0.10
+                    },
+                    "snapshot0": {
+                        "@ledcolor": 0,
+                        "@name": "SNAPSHOT 1",
+                        "@pedalstate": 0,
+                        "@tempo": 120.0,
+                        "@valid": true,
+                        "blocks": {
+                            "dsp0": {
+                                "block0": true,
+                                "block1": true,
+                                "block2": false,
+                                "block3": true,
+                                "split": true
+                            }
+                        }
+                    },
+                    "snapshot1": {
+                        "@ledcolor": 0,
+                        "@name": "SNAPSHOT 2",
+                        "@pedalstate": 0,
+                        "@tempo": 120.0,
+                        "@valid": false,
+                        "blocks": {
+                            "dsp0": {
+                                "block0": true,
+                                "block1": true,
+                                "block2": true,
+                                "block3": true,
+                                "split": true
+                            }
+                        }
+                    },
+                    "snapshot2": {
+                        "@ledcolor": 0,
+                        "@name": "SNAPSHOT 3",
+                        "@pedalstate": 0,
+                        "@tempo": 120.0,
+                        "@valid": false,
+                        "blocks": {
+                            "dsp0": {
+                                "block0": true,
+                                "block1": true,
+                                "block2": true,
+                                "block3": true,
+                                "split": true
+                            }
+                        }
+                    }
+                }
+            },
+            "meta": {
+                "original": 0,
+                "pbn": 0,
+                "premium": 0
+            },
+            "schema": "L6Preset",
+            "version": 6
+        };    
+        
+        var hxModels = {
+            // TODO: Add all models and type mappings
+            
+            /* Distortion */
+            
+            "HD2_DistKinkyBoost": {
+                "type": "dist",
+                "name": "Kinky Boost"
+            },
+            "HD2_DistDerangedMaster": {
+                "type": "dist",
+                "name": "Deranged Master"
+            },
+            "HD2_DistMinotaur": {
+                "type": "dist",
+                "name": "Minotaur"
+            },
+            "HD2_DistTeemah": {
+                "type": "dist",
+                "name": "Teemah!"
+            },
+            "HD2_DistCompulsiveDrive": {
+                "type": "dist",
+                "name": "Compulsive Drive"
+            },
+            "HD2_DistValveDriver": {
+                "type": "dist",
+                "name": "Valve Driver"
+            },
+            "HD2_DistTopSecretOD": {
+                "type": "dist",
+                "name": "Top Secret OD"
+            },
+            "HD2_DistScream808": {
+                "type": "dist",
+                "name": "Scream 808"
+            },
+            "HD2_DistHedgehogD9": {
+                "type": "dist",
+                "name": "Hedgehog D9"
+            },
+            "HD2_DistStuporOD": {
+                "type": "dist",
+                "name": "Stupor OD"
+            },
+            "HD2_DistDeezOneVintage": {
+                "type": "dist",
+                "name": "Deez One Vintage"
+            },   
+            "HD2_DistDeezOneMod": {
+                "type": "dist",
+                "name": "Deez One Mod"
+            },
+            "HD2_DistVerminDist": {
+                "type": "dist",
+                "name": "Vermin Dist"
+            },
+            "HD2_DistKWB": {
+                "type": "dist",
+                "name": "KWB"
+            },
+            "HD2_DistArbitratorFuzz": {
+                "type": "dist",
+                "name": "Arbitrator Fuzz"
+            },
+            "HD2_DistTriangleFuzz": {
+                "type": "dist",
+                "name": "Triangle Fuzz"
+            },
+            "HD2_DistIndustrialFuzz": {
+                "type": "dist",
+                "name": "Industrial Fuzz"
+            },
+            "HD2_DistTycoctaviaFuzz": {
+                "type": "dist",
+                "name": "Tycoctavia Fuzz"
+            },
+           "HD2_DistWringerFuzz": {
+                "type": "dist",
+                "name": "Wringer Fuzz"
+            },
+           "HD2_DistThrifterFuzz": {
+                "type": "dist",
+                "name": "ThrifterFuzz"
+            },
+            "HD2_DistMegaphone": {
+                "type": "dist",
+                "name": "Megaphone"
+            },
+            "HD2_DistBitcrusher": {
+                "type": "dist",
+                "name": "Bitcrusher"
+            },
+            "HD2_DistObsidian7000": {
+                "type": "dist",
+                "name": "Obsidian 7000"
+            },
+            "HD2_DistClawthornDrive": {
+                "type": "dist",
+                "name": "Clawthorn Drive"
+            },
+            
+            /* EQ */
+            
+            "HD2_EQSimple3Band": {
+                "type": "eq",
+                "name": "Simple EQ"
+            },
+            "HD2_EQParametric": {
+                "type": "eq",
+                "name": "Parametric"
+            },
+            
+            /* Amps */
+            
+            "HD2_AmpPlacaterDirty": {
+                "type":"amp",
+                "name":"Placater Dirty"
+            },
+            "HD2_AmpMatchstickCh1": {
+                "type":"amp",
+                "name":"Matchstick Ch1"
+            },
+            "HD2_AmpPVPanama": {
+                "type":"amp",
+                "name":"PV Panama"
+            },
+            
+            /* Delays */
+            
+            "HD2_DelaySimpleDelay": {
+                "type":"delay",
+                "name": "Simple Delay"
+            },
+            "HD2_DelayElephantMan": {
+                "type":"delay",
+                "name": "Elephant Man"
+            },
+            "HD2_DelayReverseDelay": {
+                "type":"delay"
+            },
+            
+            /* Mod */
+            
+            "HD2_TremoloOpticalTrem": {
+                "type":"mod"
+            },
+            
+            /* IR */
+            
+            "HD2_ImpulseResponse1024": {
+                "type":"mod"
+            },
+            
+            /* Cabs */
+            
+            "HD2_Cab4X12CaliV30": {
+                "type":"cab",
+                "name": "4X12 Cali V30"
+            },
+            "HD2_Cab4x12XXLV30": {
+                "type":"cab",
+                "name": "4x12 XXL V30"
+            },
+            
+            /* Pitch/Filter */
+            
+            "HD2_PitchDualPitch": {
+                "type":"pitch"
+            },
+            
+            /* Comp */
+            
+            "HD2_CompressorLAStudioComp": {
+                "type":"comp",
+                "name": "LA Studio Comp"
+            },
+            
+            /* Reverb */
+            
+            "HD2_ReverbCave": {
+                "type":"reverb"
+            }
+        };
+        
+        var hxLabels = {
+            "@bypassvolume": "Bypass Volume",
+            "@cab": "Cab",
+            "@enabled": "Enabled",
+            "@model": "Model",
+            "@path": "Path",
+            "@position": "Position",
+            "@stereo": "Stereo",
+            "@type": "Type",
+            "Bass": "Bass",
+            "Bias": "Bias",
+            "BiasX": "Bias X",
+            "C45": "C45",
+            "ChVol": "Channel Volume",
+            "Drive": "Drive",
+            "Fat": "Fat",
+            "HBE": "HBE",
+            "Level": "Level",
+            "Master": "Master",
+            "Mid": "Mid",
+            "Presence": "Presence",
+            "Ripple": "Ripple",
+            "SSwitch": "SSwitch",
+            "Sag": "Sag",
+            "Saturation": "Saturation",
+            "Treble": "Treble",
+            "Voice": "Voice"
+        };
+        
+        Vue.component('block', {
+            props: ['type', 'id', 'currentBlock'],
+            template: '#block',
+            methods: {
+                displayParameters: function (id) {
+                    vm.currentBlock = id;
+                }
+            }
+        });
+        
+        Vue.component('parameters', {
+            data: function() {
+                return {
+                    preset: hxPreset
+                }
+            },
+            props: ['block'],
+            template: '#parameters'
+        });
+        
+        Vue.component('icon-dist', {
+            template: '<i class="fas fa-signature"></i>'
+        })
+        
+        Vue.component('icon-comp', {
+            template: '<i class="fas fa-slash"></i>'
+        })
+        
+        Vue.component('icon-eq', {
+            template: '<i class="fas fa-sliders-h"></i>'
+        })
+        
+        Vue.component('icon-mod', {
+            template: '<i class="fas fa-adjust"></i>'
+        })
+        
+        Vue.component('icon-delay', {
+            template: '<i class="far fa-clone"></i>'
+        })
+        
+        Vue.component('icon-reverb', {
+            template: '<i class="fas fa-cube"></i>'
+        })
+        
+        Vue.component('icon-pitch', {
+            template: '<i class="fab fa-itunes-note"></i>'
+        })
+        
+        Vue.component('icon-filter', {
+            template: '<i class="fas fa-layer-group"></i>'
+        })
+        
+        Vue.component('icon-wah', {
+            template: '<i class="fas fa-shoe-prints"></i>'
+        })
+        
+        Vue.component('icon-amp-cab', {
+            template: '<i class="fas fa-hdd"></i>'
+        })
+        
+        Vue.component('icon-amp', {
+            template: '<i class="fas fa-hdd"></i>'
+        })
+        
+        Vue.component('icon-preamp', {
+            template: '<i class="fas fa-hdd"></i>'
+        })
+        
+        Vue.component('icon-cab', {
+            template: '<i class="fas fa-volume-off"></i>'
+        })
+        
+        Vue.component('icon-ir', {
+            template: '<i class="fas fa-volume-down"></i>'
+        })
+        
+        Vue.component('icon-vol-pan', {
+            template: '<i class="fas fa-signal"></i>'
+        })
+        
+        Vue.component('icon-send-return', {
+            template: '<i class="fas fa-exchange-alt"></i>'
+        })
+        
+        Vue.component('icon-looper', {
+            template: '<i class="fas fa-sync"></i>'
+        })
+        
+        Vue.filter('getModel', function (value, prop) {
+            if (!value) return '';
+            value = value.toString();
+            if (typeof hxModels[value] !== "undefined") {
+                return hxModels[value][prop];
+            }  else {
+                return "*";
+            }
+        });
+        
+        Vue.filter('getLabel', function (value) {
+            if (!value) return '';
+            value = value.toString();
+            if (typeof hxLabels[value] !== "undefined") {
+                return hxLabels[value];
+            }  else {
+                return value + "*";
+            }
+        });
+        
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                preset: hxPreset,
+                models: hxModels,
+                currentBlock: hxPreset.data.tone.dsp0.block0
+            },
+            methods: {
+                displayParameters() {
+                    this.currentBlock = hxPreset.data.tone.dsp0.block1;
+                },
+                /* file upload based on help from https://codepen.io/Atinux/pen/qOvawK & https://stackoverflow.com/questions/14740927/using-html-5-file-api-to-load-a-json-file */
+                onFileChange(e) { 
+                    var files = e.target.files || e.dataTransfer.files;
+                        if (!files.length)
+                            return;
+                        this.loadPreset(files[0]);
+                },
+                loadPreset(file) {
+                      var preset = null;
+                      var reader = new FileReader();
+                      var vm = this;
+
+                      reader.onload = (e) => {
+                        preset = JSON.parse(e.target.result);
+                        console.log(preset);
+                        vm.preset = preset;
+                      };
+                      reader.readAsText(file);
+                },
+                removeImage: function (e) {
+                    this.image = '';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
