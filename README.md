@@ -7,4 +7,4 @@ https://dbagchee.github.io/helix-preset-viewer/
 * Only displays blocks on the first path of the preset.
 * Lots of missing model data - you will see an asterisk (*) next to items that are not mapped at the moment (though you can still view the blocks parameters and probably figure out which one it is in the meantime).
 * Some of the parameter data is a little raw (true/false instead of on/off, number formatting, etc).
-*Could be other bugs!
+* Could be other bugs!
