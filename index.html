@@ -108,6 +108,38 @@
         .block--is-active .block__icon {
             border-color: #fff;
         }
+        
+        .block--position-1 {
+            order: 1;
+        }
+        
+        .block--position-2 {
+            order: 2;
+        }
+        
+        .block--position-3 {
+            order: 3;
+        }
+        
+        .block--position-4 {
+            order: 4;
+        }
+        
+        .block--position-5 {
+            order: 5;
+        }
+        
+        .block--position-6 {
+            order: 6;
+        }
+        
+        .block--position-7 {
+            order: 7;
+        }
+        
+        .block--position-8 {
+            order: 8;
+        }
 
         .block--amp,
         .block--preamp,
@@ -229,7 +261,7 @@
                 <block     
                     v-for="(value, key) in preset.data.tone.dsp0" 
                     v-if="key.startsWith('block') && value['@path'] === 0" 
-                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value">
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
                 </block>
             </div>
             <div class="path">
@@ -273,109 +305,289 @@
         </template>
         
         <template v-if="ok" id="block">
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-if="type === 'delay'" class="block block--delay">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-if="type === 'delay'" class="block block--delay">
                 <div class="block__icon">
                     <icon-delay></icon-delay>
                 </div>
                 <div class="block__name">Delay</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'dist'" class="block block--dist">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'dist'" class="block block--dist">
                 <div class="block__icon">
                     <icon-dist></icon-dist>
                 </div>
                 <div class="block__name">Dist</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'eq'" class="block block--eq">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'eq'" class="block block--eq">
                 <div class="block__icon">
                     <icon-eq></icon-eq>
                 </div>
                 <div class="block__name">EQ</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'amp'" class="block block--amp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'amp'" class="block block--amp">
                 <div class="block__icon">
                     <icon-amp></icon-amp>
                 </div>
                 <div class="block__name">Amp</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'preamp'" class="block block--preamp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'preamp'" class="block block--preamp">
                 <div class="block__icon">
                     <icon-preamp></icon-preamp>
                 </div>
                 <div class="block__name">Pre</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'amp-cab'" class="block block--preamp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'amp-cab'" class="block block--preamp">
                 <div class="block__icon">
                     <icon-amp-cab></icon-amp-cab>
                 </div>
                 <div class="block__name">Amp+Cab</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'cab'" class="block block--preamp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'cab'" class="block block--preamp">
                 <div class="block__icon">
                     <icon-cab></icon-cab>
                 </div>
                 <div class="block__name">Cab</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'ir'" class="block block--ir">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'ir'" class="block block--ir">
                 <div class="block__icon">
                     <icon-ir></icon-ir>
                 </div>
                 <div class="block__name">IR</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'wah'" class="block block--wah">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'wah'" class="block block--wah">
                 <div class="block__icon">
                     <icon-wah></icon-wah>
                 </div>
                 <div class="block__name">Wah</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'pitch'" class="block block--pitch">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'pitch'" class="block block--pitch">
                 <div class="block__icon">
                     <icon-pitch></icon-pitch>
                 </div>
                 <div class="block__name">Pitch</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'filter'" class="block block--filter">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'filter'" class="block block--filter">
                 <div class="block__icon">
                     <icon-filter></icon-filter>
                 </div>
                 <div class="block__name">Filter</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'comp'" class="block block--comp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'comp'" class="block block--comp">
                 <div class="block__icon">
                     <icon-comp></icon-comp>
                 </div>
                 <div class="block__name">Dyn</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'mod'" class="block block--mod">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'mod'" class="block block--mod">
                 <div class="block__icon">
                     <icon-mod></icon-mod>
                 </div>
                 <div class="block__name">Mod</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'reverb'" class="block block--reverb">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'reverb'" class="block block--reverb">
                 <div class="block__icon">
                     <icon-reverb></icon-reverb>
                 </div>
                 <div class="block__name">Verb</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'vol-pan'" class="block block--vol-pan">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'vol-pan'" class="block block--vol-pan">
                 <div class="block__icon">
                     <icon-vol-pan></icon-vol-pan>
                 </div>
                 <div class="block__name">Vol/Pan</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'send-return'" class="block block--send-return">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'send-return'" class="block block--send-return">
                 <div class="block__icon">
                     <icon-send-return></icon-send-return>
                 </div>
                 <div class="block__name">Send/Return</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'looper'" class="block block--looper">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'looper'" class="block block--looper">
                 <div class="block__icon">
                     <icon-looper></icon-looper>
                 </div>
                 <div class="block__name">Looper</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else class="block">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else class="block">
                 <div class="block__icon">
                     
                 </div>
@@ -551,7 +763,7 @@
             },
             "schema": "L6Preset",
             "version": 6
-        };    
+        };  
         
         var hxModels = {
             // TODO: Add all models and type mappings
@@ -1730,7 +1942,7 @@
                     isActive: 0
                 }
             },
-            props: ['type', 'id', 'currentBlock'],
+            props: ['type', 'id', 'currentBlock', 'position'],
             template: '#block',
             methods: {
                 displayParameters: function (id) {
@@ -1873,9 +2085,6 @@
                         vm.preset = preset;
                       };
                       reader.readAsText(file);
-                },
-                removeImage: function (e) {
-                    this.image = '';
                 }
             }
         });
