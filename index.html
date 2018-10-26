@@ -109,12 +109,44 @@
             border-color: #fff;
         }
         
+<<<<<<< HEAD
         .block--input {
             color: #666;
         }
         
         .block--input .block__icon {
             border-radius: 50px;
+=======
+        .block--position-1 {
+            order: 1;
+        }
+        
+        .block--position-2 {
+            order: 2;
+        }
+        
+        .block--position-3 {
+            order: 3;
+        }
+        
+        .block--position-4 {
+            order: 4;
+        }
+        
+        .block--position-5 {
+            order: 5;
+        }
+        
+        .block--position-6 {
+            order: 6;
+        }
+        
+        .block--position-7 {
+            order: 7;
+        }
+        
+        .block--position-8 {
+            order: 8;
         }
 
         .block--amp,
@@ -201,7 +233,7 @@
                 <input type="file" @change="onFileChange">
                 <p>Note: This is very much a work in progress. Currently this tool has the following limitations:</p>
                 <ul>
-                    <li>Doesn't render correct signal flow or block order.</li>
+                    <li>Doesn't render inputs, outputs, splits, or merges (yet).</li>
                     <li>Some missing model data (mostly amps and cabs at this point) - you will see an asterisk (*) next to items that are not mapped at the moment (though you can still view the blocks parameters and probably figure out which one it is in the meantime).</li>
                     <li>Some of the parameter data is a little raw (true/false instead of on/off, number formatting, etc).</li>
                     <li>Could be other bugs!</li>
@@ -238,7 +270,7 @@
                 <block     
                     v-for="(value, key) in preset.data.tone.dsp0" 
                     v-if="key.startsWith('block') && value['@path'] === 0" 
-                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value">
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
                 </block>
             </div>
             <div class="path">
@@ -282,109 +314,289 @@
         </template>
         
         <template v-if="ok" id="block">
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-if="type === 'delay'" class="block block--delay">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-if="type === 'delay'" class="block block--delay">
                 <div class="block__icon">
                     <icon-delay></icon-delay>
                 </div>
                 <div class="block__name">Delay</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'dist'" class="block block--dist">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'dist'" class="block block--dist">
                 <div class="block__icon">
                     <icon-dist></icon-dist>
                 </div>
                 <div class="block__name">Dist</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'eq'" class="block block--eq">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'eq'" class="block block--eq">
                 <div class="block__icon">
                     <icon-eq></icon-eq>
                 </div>
                 <div class="block__name">EQ</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'amp'" class="block block--amp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'amp'" class="block block--amp">
                 <div class="block__icon">
                     <icon-amp></icon-amp>
                 </div>
                 <div class="block__name">Amp</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'preamp'" class="block block--preamp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'preamp'" class="block block--preamp">
                 <div class="block__icon">
                     <icon-preamp></icon-preamp>
                 </div>
                 <div class="block__name">Pre</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'amp-cab'" class="block block--preamp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'amp-cab'" class="block block--preamp">
                 <div class="block__icon">
                     <icon-amp-cab></icon-amp-cab>
                 </div>
                 <div class="block__name">Amp+Cab</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'cab'" class="block block--preamp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'cab'" class="block block--preamp">
                 <div class="block__icon">
                     <icon-cab></icon-cab>
                 </div>
                 <div class="block__name">Cab</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'ir'" class="block block--ir">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'ir'" class="block block--ir">
                 <div class="block__icon">
                     <icon-ir></icon-ir>
                 </div>
                 <div class="block__name">IR</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'wah'" class="block block--wah">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'wah'" class="block block--wah">
                 <div class="block__icon">
                     <icon-wah></icon-wah>
                 </div>
                 <div class="block__name">Wah</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'pitch'" class="block block--pitch">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'pitch'" class="block block--pitch">
                 <div class="block__icon">
                     <icon-pitch></icon-pitch>
                 </div>
                 <div class="block__name">Pitch</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'filter'" class="block block--filter">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'filter'" class="block block--filter">
                 <div class="block__icon">
                     <icon-filter></icon-filter>
                 </div>
                 <div class="block__name">Filter</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'comp'" class="block block--comp">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'comp'" class="block block--comp">
                 <div class="block__icon">
                     <icon-comp></icon-comp>
                 </div>
                 <div class="block__name">Dyn</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'mod'" class="block block--mod">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'mod'" class="block block--mod">
                 <div class="block__icon">
                     <icon-mod></icon-mod>
                 </div>
                 <div class="block__name">Mod</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'reverb'" class="block block--reverb">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'reverb'" class="block block--reverb">
                 <div class="block__icon">
                     <icon-reverb></icon-reverb>
                 </div>
                 <div class="block__name">Verb</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'vol-pan'" class="block block--vol-pan">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'vol-pan'" class="block block--vol-pan">
                 <div class="block__icon">
                     <icon-vol-pan></icon-vol-pan>
                 </div>
                 <div class="block__name">Vol/Pan</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'send-return'" class="block block--send-return">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'send-return'" class="block block--send-return">
                 <div class="block__icon">
                     <icon-send-return></icon-send-return>
                 </div>
                 <div class="block__name">Send/Return</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else-if="type === 'looper'" class="block block--looper">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else-if="type === 'looper'" class="block block--looper">
                 <div class="block__icon">
                     <icon-looper></icon-looper>
                 </div>
                 <div class="block__name">Looper</div>
             </div>
-            <div v-bind:class="{ 'block--is-active': isActive === 1 }" v-on:click="displayParameters(id)" v-else class="block">
+            <div v-bind:class="{ 
+               'block--is-active': isActive === 1, 
+               'block--position-1': position === 0,
+               'block--position-2': position === 1,
+               'block--position-3': position === 2,
+               'block--position-4': position === 3,
+               'block--position-5': position === 4,
+               'block--position-6': position === 5,
+               'block--position-7': position === 6,
+               'block--position-8': position === 7
+               }" v-on:click="displayParameters(id)" v-else class="block">
                 <div class="block__icon">
                     
                 </div>
@@ -560,7 +772,7 @@
             },
             "schema": "L6Preset",
             "version": 6
-        };    
+        };  
         
         var hxModels = {
             // TODO: Add all models and type mappings
@@ -1102,14 +1314,149 @@
             
             /* Cabs */
             
-            "HD2_Cab4X12CaliV30": {
-                "type": "cab",
-                "name": "4X12 Cali V30"
-            },
-            "HD2_Cab4x12XXLV30": {
-                "type": "cab",
-                "name": "4x12 XXL V30"
-            },
+		"HD2_Cab1x6x9SoupProEllipse": { 
+			"type": "cab", 
+			"name": "Soup Pro Ellipse" 
+		},
+		"HD2_Cab1x8SmallTweed": {
+			"type": "cab",
+			"name": "1x8 Small Tweed" 
+		},
+		"HD2_Cab1x12FieldCoil": {
+			"type": "cab", 
+			"name": "1x12 Field Coil"
+		},
+		"HD2_Cab1x12USDeluxe": {
+			"type": "cab", 
+			"name": "1x12 US Deluxe" 
+		},
+		"HD2_Cab1x12Celest12H": { 
+			"type": "cab", 
+			"name": "1x12 Celest 12H"
+		},
+		"HD2_Cab1x12BlueBell": { 
+			"type": "cab", 
+			"name": "1x12 Blue Bell"
+		},
+		"HD2_Cab1x12Lead80": {
+			"type": "cab", 
+			"name": "1x12 Lead 80" 
+		},
+		"HD2_Cab1x12CaliExt": { 
+			"type": "cab", 
+			"name": "1x12 Cali Ext"
+		},
+		"HD2_Cab1x12CaliIV": { 
+			"type": "cab", 
+			"name": "1x12 Cali IV" 
+		},
+		"HD2_Cab1x12DelSol": { 
+			"type": "cab", 
+			"name": "1x12 Del Sol" 
+		},
+		"HD2_Cab1x12MatchH30": { 
+			"type": "cab", 
+			"name": "1x12 Match H30"
+		},
+		"HD2_Cab1x12MatchG25": {
+			"type": "cab",
+			"name": "1x12 Match G25"
+		},
+		"HD2_Cab2x12DoubleC12N": {
+			"type": "cab", 
+			"name": "2x12 Double C12N"
+		},
+		"HD2_Cab2x12MailC12Q": {
+			"type": "cab", 
+			"name": "2x12 Mail C12Q"
+		},
+		"HD2_Cab2x12Interstate": { 
+			"type": "cab", 
+			"name": "2x12 Interstate"
+		},
+		"HD2_Cab2x12JazzRivet": { 
+			"type": "cab", 
+			"name": "2x12 Jazz Rivet" 
+		},
+		"HD2_Cab2x12SilverBell": { 
+			"type": "cab", 
+			"name": "2x12 Silver Bell" 
+		},
+		"HD2_Cab2x12BlueBell": {
+			"type": "cab", 
+			"name": "2x12 Blue Bell" 
+		},
+		"HD2_Cab4x10TweedP10R": { 
+			"type": "cab", 
+			"name": "4x10 Tweed P10R"
+		},
+		"HD2_Cab4x12WhoWatt100": { 
+			"type": "cab", 
+			"name": "4x12 WhoWatt 100"
+		},
+		"HD2_Cab4x12MandarinEM": { 
+			"type": "cab", 
+			"name": "4x12 Mandarin EM"
+		},
+		"HD2_Cab4x12Greenback25": {
+			"type": "cab", 
+			"name": "4x12 Greenback25"
+		},
+		"HD2_Cab4x12Greenback20": {
+			"type": "cab", 
+			"name": "4x12 Greenback20"
+		},
+		"HD2_Cab4x12Blackback30": { 
+			"type": "cab", 
+			"name": "4x12 Blackback30" 
+		},
+		"HD2_Cab4x121960T75": { 
+			"type": "cab", 
+			"name": "4x12 1960 T75" 
+		},
+		"HD2_Cab4x12UberV30": { 
+			"type": "cab", 
+			"name": "4x12 Uber V30"
+		},
+		"HD2_Cab4x12UberT75": { 
+			"type": "cab", 
+			"name": "4x12 Uber T75"
+		},
+		"HD2_Cab4X12CaliV30": {
+			"type": "cab", 
+			"name": "4x12 Cali V30" 
+		},
+		"HD2_Cab4x12XXLV30": { 
+			"type": "cab", 
+			"name": "4x12 XXL V30"
+		},
+		"HD2_Cab4x12SoloLeadEM": { 
+			"type": "cab", 
+			"name": "4x12 SoloLead EM"
+		},
+		"HD2_Cab1x15TucknGo": { 
+			"type": "cab", 
+			"name": "1x15 Tuck n' Go"
+		},
+		"HD2_Cab1x18DelSol": { 
+			"type": "cab",
+			"name": "1x18 Del Sol"
+		},
+		"HD2_Cab1x18WoodyBlue": { 
+			"type": "cab", "name": "1x18 Woody Blue"
+		},
+		"HD2_Cab2x15Brute": { 
+			"type": "cab", "name": "2x15 Brute"
+		},
+		"HD2_Cab4x10Rhino": { 
+			"type": "cab", "name": "4x10 Rhino"
+		},
+		"HD2_Cab6x10CaliPower": { 
+			"type": "cab", "name": "6x10 Cali Power"
+		},
+		"HD2_Cab8x10SVBeast": {
+			"type": "cab", "name": "8x10 SV Beast"
+		},
 
             /* Pitch */ 
             
@@ -1522,11 +1869,32 @@
 		"@stereo": "Stereo",
 		"@trails": "Trails",
 		"@type": "Type",
+		"125Hz": "125Hz",
+		"16kHz": "16kHz",
+		"1kHz": "1kHz",
+		"2200Hz": "2200Hz",
+		"240Hz": "240Hz",
+		"250Hz": "250Hz",
+		"2kHz": "2kHz",
+		"31p25Hz": "31p25Hz",
+		"4kHz": "4kHz",
+		"500Hz": "500Hz",
+		"62p5Hz": "62p5Hz",
+		"6600Hz": "6600Hz",
+		"750Hz": "750Hz",
+		"80Hz": "80Hz",
+		"8kHz": "8kHz",
+		"AM": "AM",
+		"AM/FM": "AM/FM",
+		"AMFreq": "AM Frequency",
+		"Amount": "Amount",
 		"Asym": "Asym",
 		"Attack": "Attack",
 		"Auto": "Auto",
 		"Balance": "Balance",
 		"Bass": "Bass",
+		"BassFreq": "Bass Frequency",
+		"BBD Size": "BBD Size",
 		"Bias": "Bias",
 		"BiasX": "Bias X",
 		"BitDepth": "Bit Depth",
@@ -1536,33 +1904,66 @@
 		"C45": "C45",
 		"Cents1": "Cents 1",
 		"Cents2": "Cents 2",
+		"ChorusIntensity": "Chorus Intensity",
+		"CH Vib": "Chorus Vibration",
 		"ChVol": "Channel Volume",
 		"Clipping": "Clipping",
 		"CloseThreshold": "Close Threshold",
-		"Compress": "Compress",
+		"Color": "Color",
+		"Comp": "Compression",
+		"Compress": "Compression",
 		"Condition": "Condition",
+		"CV Decay": "CV Decay",
+		"CV Dynamics": "CV Dynamics",
+		"CV Tracking": "CV Tracking",
 		"Decay": "Decay",
 		"Delay": "Delay",
+		"DelayVoice1": "Delay Voice 1",
+		"DelayVoice2": "Delay Voice 2",
 		"Depth": "Depth",
+		"Depth1": "Depth 1",
+		"Depth2": "Depth 2",
+		"Depth3": "Depth 3",
+		"Detector": "Detector",
+		"Diffusion": "Diffusion",
 		"Direction": "Direction",
 		"Distortion": "Distortion",
+		"Doubles": "Doubles",
 		"Drive": "Drive",
-		"Ducking": "Ducking",
+		"Dry Level": "Dry Level",
 		"DryLevel": "Dry Level",
 		"DryPan": "Dry Pan",
 		"DryThru": "Dry Thru",
+		"Ducking": "Ducking",
+		"DutyCycle": "DutyCycle",
 		"DutyVoice1": "Duty Voice 1",
 		"DutyVoice2": "Duty Voice 2",
 		"DutyVoice3": "Duty Voice 3",
+		"DynAttack": "Dyn Attack",
+		"DynRel": "Dyn Release",
+		"DynType": "Dyn Type",
+		"Emphasis": "Emphasis",
 		"End": "End",
+		"Enhance": "Enhance",
+		"Env Input": "Envelope Input",
+		"Env Lag": "Envelope Lag",
 		"FM Voice3to1": "FM Voice 3 to 1",
+		"FastSpeed": "Fast Speed",
 		"Fat": "Fat",
+		"FBTone": "Feedback Tone",
 		"FcHigh": "Fc High",
 		"FcLow": "Fc Low",
 		"Feedback": "Feedback",
 		"Filter": "Filter",
 		"FilterGain": "FilterGain",
+		"FilterMatrix": "Filter Matrix",
 		"FilterQ": "FilterQ",
+		"FilterType": "Filter Type",
+		"FMAmount": "FM Amount",
+		"FMDuty": "FM Duty",
+		"FMOctave": "FM Octave",
+		"FMPitch": "FM Pitch",
+		"FMShape": "FM Shape",
 		"Focus": "Focus",
 		"Freq": "Freq",
 		"FreqDepth": "Freq Depth",
@@ -1577,16 +1978,24 @@
 		"Gate": "Gate",
 		"Grit": "Grit",
 		"Grunt": "Grunt",
+		"Harmonic": "Harmonic",
 		"HBE": "HBE",
 		"Headroom": "Headroom",
 		"Heads 1-2": "Heads 1-2",
 		"Heads 3-4": "Heads 3-4",
 		"Heel": "Heel",
-		"HiMid": "Hi Mid",
-		"HiMidFreq": "Hi Mid Freq",
+		"Hi Gain": "High Gain",
+		"Hi Thresh": "High Threshold",
+		"Hi X Freq": "High Crossover Frequency",
+		"HiMid": "High Mid",
+		"HiMidFreq": "High Mid Freq",
 		"HighCut": "High Cut",
 		"highCut": "High Cut",
+		"HighFreq": "High Frequency",
+		"HighGain": "High Gain",
+		"HighQ": "High Q",
 		"HoldTime": "Hold Time",
+		"Horn Depth": "Horn Depth",
 		"Index": "Index",
 		"Intensity": "Intensity",
 		"Interval1": "Interval 1",
@@ -1596,24 +2005,50 @@
 		"Key": "Key",
 		"KeyVoice1": "Key Voice 1",
 		"KeyVoice2": "Key Voice 2",
-		"LPHP": "LPHP",
-		"LR In Swap": "LR In Swap",
+		"Knee": "Knee",
+		"LampBias": "Lamp Bias",
+		"Left": "Left",
+		"Left Time": "Left Time",
+		"LeftBoost": "Left Boost",
+		"LeftFeedback": "Left Feedback",
 		"Level": "Level",
+		"LevelRootVoice": "Level Root Voice",
 		"LevelVoice1": "Level Voice 1",
 		"LevelVoice2": "Level Voice 2",
 		"LevelVoice3": "Level Voice 3",
 		"LFeedback": "Left Feedback",
+		"LFO": "LFO",
+		"LFORate": "LFO Rate",
+		"LFOShape": "LFO Shape",
+		"Lo Gain": "Low Gain",
+		"Lo Thresh": "Low Threshold",
+		"Lo X Freq": "Low Crossover Frequency",
 		"LoMid": "Lo Mid",
-		"LoMidFreq": "Lo Mid Freq",
+		"LoMidFreq": "Low Mid Frequncy",
 		"LowCut": "Low Cut",
+		"LowFreq": "Low Frequency",
+		"LowGain": "Low Gain",
+		"LowQ": "Low Q",
+		"LPHP": "LPHP",
+		"LR In Swap": "LR In Swap",
 		"LTime": "Left Time",
+		"Manual": "Manual",
 		"Master": "Master",
+		"Max Delay": "Max Delay",
 		"Mid": "Mid",
+		"Mid Gain": "Mid Gain",
+		"Mid Thresh": "Mid Threshold",
+		"MidFreq": "Mid Frequency",
+		"MidGain": "Mid Gain",
+		"MidQ": "Mid Q",
 		"Mix": "Mix",
+		"MixL": "Mix Left",
+		"MixR": "Mix Right",
 		"Mod Mix": "Mod Mix",
 		"ModSpeed": "Mod Speed",
 		"Mode": "Mode",
 		"Modulation": "Modulation",
+		"ModulationMode": "Modulation Mode",
 		"Noise": "Noise",
 		"Normal": "Normal",
 		"Notch Freq": "Notch Freq",
@@ -1657,12 +2092,17 @@
 		"Output": "Output",
 		"Overdub": "Overdub",
 		"Pan": "Pan",
+		"Pan Speed": "Pan Speed",
 		"PanDry": "Pan Dry",
+		"PanRootVoice": "Pan Root Voice",
 		"PanVoice1": "Pan Voice 1",
 		"PanVoice2": "Pan Voice 2",
 		"PanVoice3": "Pan Voice 3",
+		"Pattern": "Pattern",
 		"Peak": "Peak",
+		"PeakReduction": "Peak Reduction",
 		"Pedal": "Pedal",
+		"Phasing": "Phasing",
 		"Pitch": "Pitch",
 		"Pitch2": "Pitch 2",
 		"PitchMix": "Pitch Mix",
@@ -1672,17 +2112,30 @@
 		"Playback": "Playback",
 		"Predelay": "Pre-Delay",
 		"Presence": "Presence",
+		"Preset": "Preset",
 		"PullDiode": "Pull Diode",
 		"PushDiode": "Push Diode",
 		"Q": "Q",
 		"R Polarity": "R Polarity",
+		"Ramp": "Ramp",
+		"RampTime": "Ramp Time",
 		"Range": "Range",
 		"Rate": "Rate",
+		"Ratio": "Ratio",
 		"RealTimeSwitch": "Real Time Switch",
+		"Recycle": "Recycle",
+		"Regen": "Regen",
+		"Rel Offset": "Release Offset",
 		"Release": "Release",
 		"Res": "Res",
 		"Resonance": "Resonance",
 		"Return": "Return",
+		"Right": "Right",
+		"Right Time": "Right Time",
+		"RightBoost": "Right Boost",
+		"RightFeedback": "Right Feedback",
+		"RiseTime": "Rise Time",
+		"RiseTimeSwitch": "Rise Time Switch",
 		"RFeedback": "Right Feedback",
 		"Ripple": "Ripple",
 		"RTime": "Right Time",
@@ -1696,40 +2149,90 @@
 		"Send": "Send",
 		"Sens": "Sensitivity",
 		"Sensitivity": "Sensitivity",
+		"Shape": "Shape",
 		"ShapeVoice1": "Shape Voice 1",
 		"ShapeVoice2": "Shape Voice 2",
 		"ShapeVoice3": "Shape Voice 3",
 		"Shift": "Shift",
+		"Slop": "Slop",
+		"SlowSpeed": "Slow Speed",
+		"Source": "Source",
 		"Space": "Space",
 		"Speed": "Speed",
+		"Splice": "Splice",
 		"Spread": "Spread",
 		"Stability": "Stability",
+		"Stage": "Stage",
+		"Stages": "Stages",
 		"Start": "Start",
+		"Step1": "Step 1",
+		"Step2": "Step 2",
+		"Step3": "Step 3",
+		"Step4": "Step 4",
 		"Steps": "Steps",
 		"Sub": "Sub",
 		"Sustain": "Sustain",
+		"SW1": "SW1",
+		"SW2": "SW2",
+		"SW3": "SW3",
+		"SW4": "SW4",
+		"SweepDepth": "Sweep Depth",
+		"SweepResonance": "Sweep Resonance",
+		"SweepShape": "Sweep Shape",
+		"SweepSpeed": "Sweep Speed",
+		"SweepSpread": "Sweep Spread",
+		"SweepStart": "Sweep Start",
+		"SweepSymmetry": "Sweep Symmetry",
 		"Swell": "Swell",
 		"SyncSelect1": "Sync Select 1",
 		"SyncSelect2": "Sync Select 2",
 		"SynthPreset": "Synth Preset",
+		"Tap1Delay": "Tap Delay 1",
+		"Tap1Level": "Tap Level 1",
+		"Tap1Pan": "Tap Pan 1",
+		"Tap2Delay": "Tap Delay 2",
+		"Tap2Level": "Tap Level 2",
+		"Tap2Pan": "Tap Pan 2",
+		"Tap3Delay": "Tap Delay 3",
+		"Tap3Level": "Tap Level 3",
+		"Tap3Pan": "Tap Pan 3",
+		"Tap4Delay": "Tap Delay 4",
+		"Tap4Level": "Tap Level 4",
+		"Tap4Pan": "Tap Pan 4",
+		"Tap5Delay": "Tap Delay 5",
+		"Tap5Level": "Tap Level 5",
+		"Tap5Pan": "Tap Pan 5",
+		"Tap6Delay": "Tap Delay 6",
+		"Tap6Level": "Tap Level 6",
+		"Tap6Pan": "Tap Pan 6",
+		"Taper": "Taper",
 		"TempoSync1": "Tempo Sync 1",
 		"TempoSync2": "Tempo Sync 2",
 		"Thick": "Thick",
+		"Thresh": "Threshold",
 		"Threshold": "Threshold",
 		"Time": "Time",
 		"Time1": "Time 1",
 		"Time2": "Time 2",
 		"Toe": "Toe",
 		"Tone": "Tone",
+		"TrebFreq": "Treble Frequency",
 		"Treble": "Treble",
 		"Type": "Type",
 		"Version": "Version",
+		"VibratoDepth": "Vibrato Depth",
+		"VibratoRate": "Vibrato Rate",
 		"Voice": "Voice",
 		"Vol Sens": "Volume Sensitivity",
+		"Volsens": "Volume Sensitivity",
+		"VolSens": "Volume Sensitivity",
 		"VolumeTaper": "Volume Taper",
 		"Wave": "Wave",
+		"WaveShape": "Wave Shape",
+		"Wet Level": "Wet Level",
 		"Width": "Width",
 		"Wow Flt": "Wow Flt",
+		"WowFlutter": "Wow Flutter",
 		"Xover": "Crossover"
         };
         
@@ -1739,7 +2242,7 @@
                     isActive: 0
                 }
             },
-            props: ['type', 'id', 'currentBlock'],
+            props: ['type', 'id', 'currentBlock', 'position'],
             template: '#block',
             methods: {
                 displayParameters: function (id) {
@@ -1882,9 +2385,6 @@
                         vm.preset = preset;
                       };
                       reader.readAsText(file);
-                },
-                removeImage: function (e) {
-                    this.image = '';
                 }
             }
         });
