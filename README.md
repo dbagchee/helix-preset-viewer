@@ -8,3 +8,28 @@ https://dbagchee.github.io/helix-preset-viewer/
 * Some missing model data (mostly amps and cabs at this point) - you will see an asterisk (*) next to items that are not mapped at the moment (though you can still view the blocks parameters and probably figure out which one it is in the meantime).
 * Some of the parameter data is a little raw (true/false instead of on/off, number formatting, etc).
 * Could be other bugs!
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
