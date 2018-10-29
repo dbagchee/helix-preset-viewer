@@ -918,296 +918,300 @@ var hxModels = {
     /* Preamps */
     
     "HD2_PreampWhoWatt100": {
-        "type":"amp",
+        "type":"preamp",
         "name":"WhoWatt 100"
     },
     "HD2_PreampSoupPro": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Soup Pro"
     },
     "HD2_PreampStoneAge185": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Stone Age 185"
     },
     "HD2_PreampVoltageQueen": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Voltage Queen"
     },
     "HD2_PreampTweedBluesNrm": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Tweed Blues Nrm"
     },
     "HD2_PreampTweedBluesBrt": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Tweed Blues Brt"
     },
     "HD2_PreampUSSmallTweed": {
-        "type":"amp",
+        "type":"preamp",
         "name":"US Small Tweed"
     },
     "HD2_PreampUSDeluxeNrm": {
-        "type":"amp",
+        "type":"preamp",
         "name":"US Deluxe Nrm"
     },
     "HD2_PreampUSDeluxeVib": {
-        "type":"amp",
+        "type":"preamp",
         "name":"US Deluxe Vib"
     },
     "HD2_PreampUSDoubleNrm": {
-        "type":"amp",
+        "type":"preamp",
         "name":"US Double Nrm"
     },
     "HD2_PreampUSDoubleVib": {
-        "type":"amp",
+        "type":"preamp",
         "name":"US Double Vib"
     },
     "HD2_PreampMailOrderTwin": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Mail Order Twin"
     },
     "HD2_PreampDividedDuo": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Divided Duo"
     },
     "HD2_PreampInterstateZed": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Interstate Zed"
     },
     "HD2_PreampDerailedIngrid": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Derailed Ingrid"
     },
     "HD2_PreampJazzRivet120": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Jazz Rivet 120"
     },
     "HD2_PreampEssexA15": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Essex A15"
     },
     "HD2_PreampEssexA30": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Essex A30"
     },
     "HD2_PreampA30FawnNrm": {
-        "type":"amp",
+        "type":"preamp",
         "name":"A30 Fawn Nrm"
     },
     "HD2_PreampA30FawnBrt": {
-        "type":"amp",
+        "type":"preamp",
         "name":"A30 Fawn Brt"
     },
     "HD2_PreampMatchstickCh1": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Matchstick Ch1"
     },
     "HD2_PreampMatchstickCh2": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Matchstick Ch2"
     },
     "HD2_PreampMatchstickJump": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Matchstick Jump"
     },
     "HD2_PreampMandarin80": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Mandarin 80"
     },
     "HD2_PreampBritJ45Nrm": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit J45 Nrm"
     },
     "HD2_PreampBritJ45Brt": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit J45 Brt"
     },
     "HD2_PreampBritTremNrm": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit Trem Nrm"
     },
     "HD2_PreampBritTremBrt": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit Trem Brt"
     },
     "HD2_PreampBritTremJump": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit Trem Jump"
     },
     "HD2_PreampBritPlexiNrm": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit Plexi Nrm"
     },
     "HD2_PreampBritPlexiBrt": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit Plexi Brt"
     },
     "HD2_PreampBritPlexiJump": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit Plexi Jump"
     },
     "HD2_PreampBritP75Nrm": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit P75 Nrm"
     },
     "HD2_PreampBritP75Brt": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit P75 Brt"
     },
     "HD2_PreampBrit2204": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Brit 2204"
     },
     "HD2_PreampPlacaterClean": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Placater Clean"
     },
     "HD2_PreampPlacaterDirty": {
-            "type":"amp",
-            "name":"Placater Dirty"
-        },
+        "type":"preamp",
+        "name":"Placater Dirty"
+    },
     "HD2_PreampCartographer": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cartographer"
     },
     "HD2_PreampGermanMahadeva": {
-        "type":"amp",
+        "type":"preamp",
         "name":"German Mahadeva"
     },
     "HD2_PreampGermanUbersonic": {
-        "type":"amp",
+        "type":"preamp",
         "name":"German Ubersonic"
     },
     "HD2_PreampCaliTexasCh1": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cali Texas Ch1"
     },
     "HD2_PreampCaliTexasCh2": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cali Texas Ch2"
     },
     "HD2_PreampCaliIVR1": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cali IV Rhythm 1"
     },
     "HD2_PreampCaliIVR2": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cali IV Rhythm 2"
     },
     "HD2_PreampCaliIVLead": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cali IV Lead"
     },
     "HD2_PreampCaliRectifire": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cali Rectifire"
     },
     "HD2_PreampArchetypeClean": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Archetype Clean"
     },
     "HD2_PreampArchetypeLead": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Archetype Lead"
     },
     "HD2_PreampANGLMeteor": {
-        "type":"amp",
+        "type":"preamp",
         "name":"ANGL Meteor"
     },
     "HD2_PreampSoloLeadClean": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Solo Lead Clean"
     },
     "HD2_PreampSoloLeadCrunch": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Solo Lead Crunch"
     },
     "HD2_PreampSoloLeadOD": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Solo Lead OD"
     },
     "HD2_PreampPVPanama": {
-            "type":"amp",
-            "name":"PV Panama"
-        },
+        "type":"preamp",
+        "name":"PV Panama"
+    },
     "HD2_PreampLine6Elektrik": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Line 6 Elektrik"
     },
     "HD2_PreampLine6Doom": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Line 6 Doom"
     },
     "HD2_PreampLine6Epic": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Line 6 Epic"
     },
     "HD2_PreampLine62204Mod": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Line 6 2204 Mod"
     },
     "HD2_PreampLine6Fatality": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Line 6 Fatality"
     },
     "HD2_PreampLine6Litigator": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Line 6 Litigator"
     },
     "HD2_PreampLine6Badonk": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Line 6 Badonk"
     },
     "HD2_PreampTucknGo": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Tuck n' Go"
     },
     "HD2_PreampSVBeastNrm": {
-        "type":"amp",
+        "type":"preamp",
         "name":"SV Beast Nrm"
     },
     "HD2_PreampSVBeastBrt": {
-        "type":"amp",
+        "type":"preamp",
         "name":"SV Beast Brt"
     },
     "HD2_PreampWoodyBlue": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Woody Blue"
     },
     "HD2_PreampAgua51": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Agua 51"
     },
     "HD2_PreampCaliBass": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cali Bass"
     },
     "HD2_PreampCali400Ch1": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cali 400 Ch1"
     },
     "HD2_PreampCali400Ch2": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Cali 400 Ch2"
     },
     "HD2_PreampGCougar800": {
-        "type":"amp",
+        "type":"preamp",
         "name":"G Cougar 800"
     },
     "HD2_PreampDelSol300": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Del Sol 300"
     },
     "HD2_PreampBusyOneCh1": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Busy One Ch1"
     },
     "HD2_PreampBusyOneCh2": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Busy One Ch2"
     },
     "HD2_PreampBusyOneJump": {
-        "type":"amp",
+        "type":"preamp",
         "name":"Busy One Jump"
+    },
+    "HD2_PreampVintagePre": {
+        "type":"preamp",
+        "name":"Studio Tube Pre"
     },
 
     /* Delays */
