@@ -15,11 +15,14 @@
         'block--filter': type === 'filter',
         'block--wah': type === 'wah',
         'block--input': type === 'input',
+        'block--output': type === 'output',
         'block--ir': type === 'ir',
         'block--vol-pan': type === 'vol-pan',
         'block--send-return': type === 'send-return',
         'block--looper': type === 'looper',
         'block--delay': type === 'delay',
+        'block--split': type === 'split',
+        'block--join': type === 'join',
         'block--is-active': isActive === 1, 
         'block--position-1': position === 0,
         'block--position-2': position === 1,
@@ -28,7 +31,9 @@
         'block--position-5': position === 4,
         'block--position-6': position === 5,
         'block--position-7': position === 6,
-        'block--position-8': position === 7}" v-on:click="displayParameters(id)">
+        'block--position-8': position === 7,
+        'block--position-9': position === 8,
+        'block--position-20': position === 20}" v-on:click="displayParameters(id)">
         <div class="block__icon">
             <i v-bind:class="blockTypes[type].icon"></i>
         </div>
@@ -113,12 +118,25 @@ export default {
                 },
                 "input": {
                     "name": "Input",
-                    "icon": "fas fa-exchange-alt"
+                    "icon": "far fa-arrow-alt-circle-right"
+                },
+                "output": {
+                    "name": "Output",
+                    "icon": "far fa-arrow-alt-circle-right"
                 },
                 "unknown": {
                     "name": "Unknown",
                     "icon": "fas fa-question"
+                },
+                "split": {
+                    "name": "Split",
+                    "icon": "far fa-arrow-alt-circle-down"
+                },
+                "join": {
+                    "name": "Join",
+                    "icon": "far fa-arrow-alt-circle-up"
                 }
+                
             }
         }
     },
@@ -147,7 +165,6 @@ export default {
     align-items: center;
     text-align: center;
     margin: 0 20px;
-    background-color: #000;
     z-index: 5;
 }
 
@@ -161,6 +178,7 @@ export default {
     border: 1px solid #666;
     border-radius: 6px;
     font-size: 24px;
+    background-color: #000;
 }
 
 .block__name {
@@ -171,11 +189,15 @@ export default {
     border-color: #fff;
 }
 
-.block--input {
+.block--input,
+.block--output,
+.block--split,
+.block--join {
     color: #666;
 }
 
-.block--input .block__icon {
+.block--input .block__icon,
+.block--output .block__icon {
     border-radius: 50px;
 }
 
@@ -209,6 +231,18 @@ export default {
 
 .block--position-8 {
     order: 8;
+}
+    
+.block--position-9 {
+    order: 9;
+}
+    
+.block--position-10 {
+    order: 10;
+}
+    
+.block--position-20 {
+    order: 20;
 }
 
 .block--amp,
@@ -256,5 +290,10 @@ export default {
 
 .block--looper {
     color: #ccc;
+}
+
+.block--split .block__icon,
+.block--join .block__icon {
+    
 }
 </style>

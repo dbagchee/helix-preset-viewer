@@ -3,6 +3,7 @@
         <div class="container">
             <Header/>
             <div v-if="!presetLoaded" class="path">
+                <BlockItem type="input"></BlockItem>
                 <BlockItem type="dist"></BlockItem>
                 <BlockItem type="comp"></BlockItem>
                 <BlockItem type="eq"></BlockItem>
@@ -11,9 +12,10 @@
                 <BlockItem type="reverb"></BlockItem>
                 <BlockItem type="pitch"></BlockItem>
                 <BlockItem type="filter"></BlockItem>
-                <BlockItem type="input"></BlockItem>
+                <BlockItem type="output"></BlockItem>
             </div>
             <div v-if="!presetLoaded" class="path">
+                <BlockItem type="split"></BlockItem>
                 <BlockItem type="wah"></BlockItem>
                 <BlockItem type="amp-cab"></BlockItem>
                 <BlockItem type="amp"></BlockItem>
@@ -23,6 +25,7 @@
                 <BlockItem type="vol-pan"></BlockItem>
                 <BlockItem type="send-return"></BlockItem>
                 <BlockItem type="looper"></BlockItem>
+                <BlockItem type="join"></BlockItem>
             </div>
             
             <h2 v-if="presetLoaded">Preset Name: {{ preset.data.meta.name }}</h2>
@@ -30,29 +33,79 @@
             <div v-if="presetLoaded" class="path">
                 <BlockItem     
                     v-for="(value, key) in preset.data.tone.dsp0" 
-                    v-if="key.startsWith('block') && value['@path'] === 0" 
+                    v-if="key === 'inputA'"  
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="0">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp0" 
+                    v-if="key === 'split' || key === 'join'" 
                     v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp0" 
+                    v-if="value['@path'] === 0 && value['@position']" 
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp0" 
+                    v-if="key === 'outputA'"  
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="20">
                 </BlockItem>
             </div>
             <div v-if="presetLoaded" class="path">
                 <BlockItem     
                     v-for="(value, key) in preset.data.tone.dsp0" 
-                    v-if="key.startsWith('block') && value['@path'] === 1" 
+                    v-if="key === 'inputB'"  
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="0">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp0" 
+                    v-if="value['@path'] === 1 && value['@position']" 
                     v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp0" 
+                    v-if="key === 'outputB'"  
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="20">
                 </BlockItem>
             </div>
             <div v-if="presetLoaded" class="path">
                 <BlockItem     
                     v-for="(value, key) in preset.data.tone.dsp1" 
-                    v-if="key.startsWith('block') && value['@path'] === 0" 
+                    v-if="key === 'inputA'"  
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="0">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp1" 
+                    v-if="key === 'split' || key === 'join'" 
                     v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp1" 
+                    v-if="value['@path'] === 0 && value['@position']" 
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp1" 
+                    v-if="key === 'outputA'"  
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="20">
                 </BlockItem>
             </div>
             <div v-if="presetLoaded" class="path">
                 <BlockItem     
                     v-for="(value, key) in preset.data.tone.dsp1" 
-                    v-if="key.startsWith('block') && value['@path'] === 1" 
+                    v-if="key === 'inputB'"  
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="0">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp1" 
+                    v-if="value['@path'] === 1 && value['@position']" 
                     v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
+                </BlockItem>
+                <BlockItem     
+                    v-for="(value, key) in preset.data.tone.dsp1" 
+                    v-if="key === 'outputB'"  
+                    v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="20">
                 </BlockItem>
             </div>
             
