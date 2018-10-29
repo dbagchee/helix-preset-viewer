@@ -621,18 +621,593 @@ var hxModels = {
     },
 
     /* Amps */
-
-    "HD2_AmpPlacaterDirty": {
+    
+    "HD2_AmpWhoWatt100": {
         "type":"amp",
-        "name":"Placater Dirty"
+        "name":"WhoWatt 100"
+    },
+    "HD2_AmpSoupPro": {
+        "type":"amp",
+        "name":"Soup Pro"
+    },
+    "HD2_AmpStoneAge185": {
+        "type":"amp",
+        "name":"Stone Age 185"
+    },
+    "HD2_AmpVoltageQueen": {
+        "type":"amp",
+        "name":"Voltage Queen"
+    },
+    "HD2_AmpTweedBluesNrm": {
+        "type":"amp",
+        "name":"Tweed Blues Nrm"
+    },
+    "HD2_AmpTweedBluesBrt": {
+        "type":"amp",
+        "name":"Tweed Blues Brt"
+    },
+    "HD2_AmpUSSmallTweed": {
+        "type":"amp",
+        "name":"US Small Tweed"
+    },
+    "HD2_AmpUSDeluxeNrm": {
+        "type":"amp",
+        "name":"US Deluxe Nrm"
+    },
+    "HD2_AmpUSDeluxeVib": {
+        "type":"amp",
+        "name":"US Deluxe Vib"
+    },
+    "HD2_AmpUSDoubleNrm": {
+        "type":"amp",
+        "name":"US Double Nrm"
+    },
+    "HD2_AmpUSDoubleVib": {
+        "type":"amp",
+        "name":"US Double Vib"
+    },
+    "HD2_AmpMailOrderTwin": {
+        "type":"amp",
+        "name":"Mail Order Twin"
+    },
+    "HD2_AmpDividedDuo": {
+        "type":"amp",
+        "name":"Divided Duo"
+    },
+    "HD2_AmpInterstateZed": {
+        "type":"amp",
+        "name":"Interstate Zed"
+    },
+    "HD2_AmpDerailedIngrid": {
+        "type":"amp",
+        "name":"Derailed Ingrid"
+    },
+    "HD2_AmpJazzRivet120": {
+        "type":"amp",
+        "name":"Jazz Rivet 120"
+    },
+    "HD2_AmpEssexA15": {
+        "type":"amp",
+        "name":"Essex A15"
+    },
+    "HD2_AmpEssexA30": {
+        "type":"amp",
+        "name":"Essex A30"
+    },
+    "HD2_AmpA30FawnNrm": {
+        "type":"amp",
+        "name":"A30 Fawn Nrm"
+    },
+    "HD2_AmpA30FawnBrt": {
+        "type":"amp",
+        "name":"A30 Fawn Brt"
     },
     "HD2_AmpMatchstickCh1": {
         "type":"amp",
         "name":"Matchstick Ch1"
     },
-    "HD2_AmpPVPanama": {
+    "HD2_AmpMatchstickCh2": {
         "type":"amp",
-        "name":"PV Panama"
+        "name":"Matchstick Ch2"
+    },
+    "HD2_AmpMatchstickJump": {
+        "type":"amp",
+        "name":"Matchstick Jump"
+    },
+    "HD2_AmpMandarin80": {
+        "type":"amp",
+        "name":"Mandarin 80"
+    },
+    "HD2_AmpBritJ45Nrm": {
+        "type":"amp",
+        "name":"Brit J45 Nrm"
+    },
+    "HD2_AmpBritJ45Brt": {
+        "type":"amp",
+        "name":"Brit J45 Brt"
+    },
+    "HD2_AmpBritTremNrm": {
+        "type":"amp",
+        "name":"Brit Trem Nrm"
+    },
+    "HD2_AmpBritTremBrt": {
+        "type":"amp",
+        "name":"Brit Trem Brt"
+    },
+    "HD2_AmpBritTremJump": {
+        "type":"amp",
+        "name":"Brit Trem Jump"
+    },
+    "HD2_AmpBritPlexiNrm": {
+        "type":"amp",
+        "name":"Brit Plexi Nrm"
+    },
+    "HD2_AmpBritPlexiBrt": {
+        "type":"amp",
+        "name":"Brit Plexi Brt"
+    },
+    "HD2_AmpBritPlexiJump": {
+        "type":"amp",
+        "name":"Brit Plexi Jump"
+    },
+    "HD2_AmpBritP75Nrm": {
+        "type":"amp",
+        "name":"Brit P75 Nrm"
+    },
+    "HD2_AmpBritP75Brt": {
+        "type":"amp",
+        "name":"Brit P75 Brt"
+    },
+    "HD2_AmpBrit2204": {
+        "type":"amp",
+        "name":"Brit 2204"
+    },
+    "HD2_AmpPlacaterClean": {
+        "type":"amp",
+        "name":"Placater Clean"
+    },
+    "HD2_AmpPlacaterDirty": {
+            "type":"amp",
+            "name":"Placater Dirty"
+        },
+    "HD2_AmpCartographer": {
+        "type":"amp",
+        "name":"Cartographer"
+    },
+    "HD2_AmpGermanMahadeva": {
+        "type":"amp",
+        "name":"German Mahadeva"
+    },
+    "HD2_AmpGermanUbersonic": {
+        "type":"amp",
+        "name":"German Ubersonic"
+    },
+    "HD2_AmpCaliTexasCh1": {
+        "type":"amp",
+        "name":"Cali Texas Ch1"
+    },
+    "HD2_AmpCaliTexasCh2": {
+        "type":"amp",
+        "name":"Cali Texas Ch2"
+    },
+    "HD2_AmpCaliIVR1": {
+        "type":"amp",
+        "name":"Cali IV Rhythm 1"
+    },
+    "HD2_AmpCaliIVR2": {
+        "type":"amp",
+        "name":"Cali IV Rhythm 2"
+    },
+    "HD2_AmpCaliIVLead": {
+        "type":"amp",
+        "name":"Cali IV Lead"
+    },
+    "HD2_AmpCaliRectifire": {
+        "type":"amp",
+        "name":"Cali Rectifire"
+    },
+    "HD2_AmpArchetypeClean": {
+        "type":"amp",
+        "name":"Archetype Clean"
+    },
+    "HD2_AmpArchetypeLead": {
+        "type":"amp",
+        "name":"Archetype Lead"
+    },
+    "HD2_AmpANGLMeteor": {
+        "type":"amp",
+        "name":"ANGL Meteor"
+    },
+    "HD2_AmpSoloLeadClean": {
+        "type":"amp",
+        "name":"Solo Lead Clean"
+    },
+    "HD2_AmpSoloLeadCrunch": {
+        "type":"amp",
+        "name":"Solo Lead Crunch"
+    },
+    "HD2_AmpSoloLeadOD": {
+        "type":"amp",
+        "name":"Solo Lead OD"
+    },
+    "HD2_AmpPVPanama": {
+            "type":"amp",
+            "name":"PV Panama"
+        },
+    "HD2_AmpLine6Elektrik": {
+        "type":"amp",
+        "name":"Line 6 Elektrik"
+    },
+    "HD2_AmpLine6Doom": {
+        "type":"amp",
+        "name":"Line 6 Doom"
+    },
+    "HD2_AmpLine6Epic": {
+        "type":"amp",
+        "name":"Line 6 Epic"
+    },
+    "HD2_AmpLine62204Mod": {
+        "type":"amp",
+        "name":"Line 6 2204 Mod"
+    },
+    "HD2_AmpLine6Fatality": {
+        "type":"amp",
+        "name":"Line 6 Fatality"
+    },
+    "HD2_AmpLine6Litigator": {
+        "type":"amp",
+        "name":"Line 6 Litigator"
+    },
+    "HD2_AmpLine6Badonk": {
+        "type":"amp",
+        "name":"Line 6 Badonk"
+    },
+    "HD2_AmpTucknGo": {
+        "type":"amp",
+        "name":"Tuck n' Go"
+    },
+    "HD2_AmpSVBeastNrm": {
+        "type":"amp",
+        "name":"SV Beast Nrm"
+    },
+    "HD2_AmpSVBeastBrt": {
+        "type":"amp",
+        "name":"SV Beast Brt"
+    },
+    "HD2_AmpWoodyBlue": {
+        "type":"amp",
+        "name":"Woody Blue"
+    },
+    "HD2_AmpAgua51": {
+        "type":"amp",
+        "name":"Agua 51"
+    },
+    "HD2_AmpCaliBass": {
+        "type":"amp",
+        "name":"Cali Bass"
+    },
+    "HD2_AmpCali400Ch1": {
+        "type":"amp",
+        "name":"Cali 400 Ch1"
+    },
+    "HD2_AmpCali400Ch2": {
+        "type":"amp",
+        "name":"Cali 400 Ch2"
+    },
+    "HD2_AmpGCougar800": {
+        "type":"amp",
+        "name":"G Cougar 800"
+    },
+    "HD2_AmpDelSol300": {
+        "type":"amp",
+        "name":"Del Sol 300"
+    },
+    "HD2_AmpBusyOneCh1": {
+        "type":"amp",
+        "name":"Busy One Ch1"
+    },
+    "HD2_AmpBusyOneCh2": {
+        "type":"amp",
+        "name":"Busy One Ch2"
+    },
+    "HD2_AmpBusyOneJump": {
+        "type":"amp",
+        "name":"Busy One Jump"
+    },
+    
+    /* Preamps */
+    
+    "HD2_PreampWhoWatt100": {
+        "type":"amp",
+        "name":"WhoWatt 100"
+    },
+    "HD2_PreampSoupPro": {
+        "type":"amp",
+        "name":"Soup Pro"
+    },
+    "HD2_PreampStoneAge185": {
+        "type":"amp",
+        "name":"Stone Age 185"
+    },
+    "HD2_PreampVoltageQueen": {
+        "type":"amp",
+        "name":"Voltage Queen"
+    },
+    "HD2_PreampTweedBluesNrm": {
+        "type":"amp",
+        "name":"Tweed Blues Nrm"
+    },
+    "HD2_PreampTweedBluesBrt": {
+        "type":"amp",
+        "name":"Tweed Blues Brt"
+    },
+    "HD2_PreampUSSmallTweed": {
+        "type":"amp",
+        "name":"US Small Tweed"
+    },
+    "HD2_PreampUSDeluxeNrm": {
+        "type":"amp",
+        "name":"US Deluxe Nrm"
+    },
+    "HD2_PreampUSDeluxeVib": {
+        "type":"amp",
+        "name":"US Deluxe Vib"
+    },
+    "HD2_PreampUSDoubleNrm": {
+        "type":"amp",
+        "name":"US Double Nrm"
+    },
+    "HD2_PreampUSDoubleVib": {
+        "type":"amp",
+        "name":"US Double Vib"
+    },
+    "HD2_PreampMailOrderTwin": {
+        "type":"amp",
+        "name":"Mail Order Twin"
+    },
+    "HD2_PreampDividedDuo": {
+        "type":"amp",
+        "name":"Divided Duo"
+    },
+    "HD2_PreampInterstateZed": {
+        "type":"amp",
+        "name":"Interstate Zed"
+    },
+    "HD2_PreampDerailedIngrid": {
+        "type":"amp",
+        "name":"Derailed Ingrid"
+    },
+    "HD2_PreampJazzRivet120": {
+        "type":"amp",
+        "name":"Jazz Rivet 120"
+    },
+    "HD2_PreampEssexA15": {
+        "type":"amp",
+        "name":"Essex A15"
+    },
+    "HD2_PreampEssexA30": {
+        "type":"amp",
+        "name":"Essex A30"
+    },
+    "HD2_PreampA30FawnNrm": {
+        "type":"amp",
+        "name":"A30 Fawn Nrm"
+    },
+    "HD2_PreampA30FawnBrt": {
+        "type":"amp",
+        "name":"A30 Fawn Brt"
+    },
+    "HD2_PreampMatchstickCh1": {
+        "type":"amp",
+        "name":"Matchstick Ch1"
+    },
+    "HD2_PreampMatchstickCh2": {
+        "type":"amp",
+        "name":"Matchstick Ch2"
+    },
+    "HD2_PreampMatchstickJump": {
+        "type":"amp",
+        "name":"Matchstick Jump"
+    },
+    "HD2_PreampMandarin80": {
+        "type":"amp",
+        "name":"Mandarin 80"
+    },
+    "HD2_PreampBritJ45Nrm": {
+        "type":"amp",
+        "name":"Brit J45 Nrm"
+    },
+    "HD2_PreampBritJ45Brt": {
+        "type":"amp",
+        "name":"Brit J45 Brt"
+    },
+    "HD2_PreampBritTremNrm": {
+        "type":"amp",
+        "name":"Brit Trem Nrm"
+    },
+    "HD2_PreampBritTremBrt": {
+        "type":"amp",
+        "name":"Brit Trem Brt"
+    },
+    "HD2_PreampBritTremJump": {
+        "type":"amp",
+        "name":"Brit Trem Jump"
+    },
+    "HD2_PreampBritPlexiNrm": {
+        "type":"amp",
+        "name":"Brit Plexi Nrm"
+    },
+    "HD2_PreampBritPlexiBrt": {
+        "type":"amp",
+        "name":"Brit Plexi Brt"
+    },
+    "HD2_PreampBritPlexiJump": {
+        "type":"amp",
+        "name":"Brit Plexi Jump"
+    },
+    "HD2_PreampBritP75Nrm": {
+        "type":"amp",
+        "name":"Brit P75 Nrm"
+    },
+    "HD2_PreampBritP75Brt": {
+        "type":"amp",
+        "name":"Brit P75 Brt"
+    },
+    "HD2_PreampBrit2204": {
+        "type":"amp",
+        "name":"Brit 2204"
+    },
+    "HD2_PreampPlacaterClean": {
+        "type":"amp",
+        "name":"Placater Clean"
+    },
+    "HD2_PreampPlacaterDirty": {
+            "type":"amp",
+            "name":"Placater Dirty"
+        },
+    "HD2_PreampCartographer": {
+        "type":"amp",
+        "name":"Cartographer"
+    },
+    "HD2_PreampGermanMahadeva": {
+        "type":"amp",
+        "name":"German Mahadeva"
+    },
+    "HD2_PreampGermanUbersonic": {
+        "type":"amp",
+        "name":"German Ubersonic"
+    },
+    "HD2_PreampCaliTexasCh1": {
+        "type":"amp",
+        "name":"Cali Texas Ch1"
+    },
+    "HD2_PreampCaliTexasCh2": {
+        "type":"amp",
+        "name":"Cali Texas Ch2"
+    },
+    "HD2_PreampCaliIVR1": {
+        "type":"amp",
+        "name":"Cali IV Rhythm 1"
+    },
+    "HD2_PreampCaliIVR2": {
+        "type":"amp",
+        "name":"Cali IV Rhythm 2"
+    },
+    "HD2_PreampCaliIVLead": {
+        "type":"amp",
+        "name":"Cali IV Lead"
+    },
+    "HD2_PreampCaliRectifire": {
+        "type":"amp",
+        "name":"Cali Rectifire"
+    },
+    "HD2_PreampArchetypeClean": {
+        "type":"amp",
+        "name":"Archetype Clean"
+    },
+    "HD2_PreampArchetypeLead": {
+        "type":"amp",
+        "name":"Archetype Lead"
+    },
+    "HD2_PreampANGLMeteor": {
+        "type":"amp",
+        "name":"ANGL Meteor"
+    },
+    "HD2_PreampSoloLeadClean": {
+        "type":"amp",
+        "name":"Solo Lead Clean"
+    },
+    "HD2_PreampSoloLeadCrunch": {
+        "type":"amp",
+        "name":"Solo Lead Crunch"
+    },
+    "HD2_PreampSoloLeadOD": {
+        "type":"amp",
+        "name":"Solo Lead OD"
+    },
+    "HD2_PreampPVPanama": {
+            "type":"amp",
+            "name":"PV Panama"
+        },
+    "HD2_PreampLine6Elektrik": {
+        "type":"amp",
+        "name":"Line 6 Elektrik"
+    },
+    "HD2_PreampLine6Doom": {
+        "type":"amp",
+        "name":"Line 6 Doom"
+    },
+    "HD2_PreampLine6Epic": {
+        "type":"amp",
+        "name":"Line 6 Epic"
+    },
+    "HD2_PreampLine62204Mod": {
+        "type":"amp",
+        "name":"Line 6 2204 Mod"
+    },
+    "HD2_PreampLine6Fatality": {
+        "type":"amp",
+        "name":"Line 6 Fatality"
+    },
+    "HD2_PreampLine6Litigator": {
+        "type":"amp",
+        "name":"Line 6 Litigator"
+    },
+    "HD2_PreampLine6Badonk": {
+        "type":"amp",
+        "name":"Line 6 Badonk"
+    },
+    "HD2_PreampTucknGo": {
+        "type":"amp",
+        "name":"Tuck n' Go"
+    },
+    "HD2_PreampSVBeastNrm": {
+        "type":"amp",
+        "name":"SV Beast Nrm"
+    },
+    "HD2_PreampSVBeastBrt": {
+        "type":"amp",
+        "name":"SV Beast Brt"
+    },
+    "HD2_PreampWoodyBlue": {
+        "type":"amp",
+        "name":"Woody Blue"
+    },
+    "HD2_PreampAgua51": {
+        "type":"amp",
+        "name":"Agua 51"
+    },
+    "HD2_PreampCaliBass": {
+        "type":"amp",
+        "name":"Cali Bass"
+    },
+    "HD2_PreampCali400Ch1": {
+        "type":"amp",
+        "name":"Cali 400 Ch1"
+    },
+    "HD2_PreampCali400Ch2": {
+        "type":"amp",
+        "name":"Cali 400 Ch2"
+    },
+    "HD2_PreampGCougar800": {
+        "type":"amp",
+        "name":"G Cougar 800"
+    },
+    "HD2_PreampDelSol300": {
+        "type":"amp",
+        "name":"Del Sol 300"
+    },
+    "HD2_PreampBusyOneCh1": {
+        "type":"amp",
+        "name":"Busy One Ch1"
+    },
+    "HD2_PreampBusyOneCh2": {
+        "type":"amp",
+        "name":"Busy One Ch2"
+    },
+    "HD2_PreampBusyOneJump": {
+        "type":"amp",
+        "name":"Busy One Jump"
     },
 
     /* Delays */
