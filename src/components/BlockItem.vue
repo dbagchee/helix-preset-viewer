@@ -133,7 +133,7 @@ export default {
                     "icon": "far fa-arrow-alt-circle-down"
                 },
                 "join": {
-                    "name": "Join",
+                    "name": "Merge",
                     "icon": "far fa-arrow-alt-circle-up"
                 }
                 

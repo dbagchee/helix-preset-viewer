@@ -43,7 +43,7 @@
                 </BlockItem>
                 <BlockItem     
                     v-for="(value, key) in preset.data.tone.dsp0" 
-                    v-if="value['@path'] === 0 && value['@position']" 
+                    v-if="value['@path'] === 0 && key.startsWith('block')" 
                     v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
                 </BlockItem>
                 <BlockItem     
@@ -60,7 +60,7 @@
                 </BlockItem>
                 <BlockItem     
                     v-for="(value, key) in preset.data.tone.dsp0" 
-                    v-if="value['@path'] === 1 && value['@position']" 
+                    v-if="value['@path'] === 1 && key.startsWith('block')" 
                     v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
                 </BlockItem>
                 <BlockItem     
@@ -82,7 +82,7 @@
                 </BlockItem>
                 <BlockItem     
                     v-for="(value, key) in preset.data.tone.dsp1" 
-                    v-if="value['@path'] === 0 && value['@position']" 
+                    v-if="value['@path'] === 0 && key.startsWith('block')" 
                     v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
                 </BlockItem>
                 <BlockItem     
@@ -99,7 +99,7 @@
                 </BlockItem>
                 <BlockItem     
                     v-for="(value, key) in preset.data.tone.dsp1" 
-                    v-if="value['@path'] === 1 && value['@position']" 
+                    v-if="value['@path'] === 1 && key.startsWith('block')" 
                     v-bind:type="value['@model'] | getModel('type')" v-bind:id="value" v-bind:position="value['@position']">
                 </BlockItem>
                 <BlockItem     
