@@ -1527,11 +1527,15 @@ var hxModels = {
     },
     "HD2_AppDSPFlowSplitAB": {
         "type": "split", 
-        "name": "Split AB" 
+        "name": "Split A/B" 
+    },
+    "HD2_AppDSPFlowSplitXOver": {
+        "type": "split", 
+        "name": "Split Crossover" 
     },
     "HD2_AppDSPFlowJoin": {
         "type": "join", 
-        "name": "Join" 
+        "name": "Mixer" 
     },
     "HD2_AppDSPFlow1Input": {
         "type": "input", 
