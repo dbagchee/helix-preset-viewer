@@ -1,6 +1,7 @@
 <template>
     <div class="block" v-bind:class="{
         'block--unknown': type === 'unknown',
+        'block--none': type === 'none',
         'block--delay': type === 'delay',
         'block--amp': type === 'amp',
         'block--preamp': type === 'preamp',
@@ -127,6 +128,10 @@ export default {
                 "unknown": {
                     "name": "Unknown",
                     "icon": "fas fa-question"
+                },
+                "none": {
+                    "name": "None",
+                    "icon": ""
                 },
                 "split": {
                     "name": "Split",
@@ -296,4 +301,17 @@ export default {
 .block--join .block__icon {
     
 }
+
+.block--none {
+    width: 52px;
+    height: 52px;
+} 
+
+.block--none .block__icon {
+   display: none; 
+} 
+
+.block--none .block__name {
+   display: none; 
+} 
 </style>

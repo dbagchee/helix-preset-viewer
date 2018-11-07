@@ -19,6 +19,7 @@
                 <BlockItem type="wah"></BlockItem>
                 <BlockItem type="amp-cab"></BlockItem>
                 <BlockItem type="amp"></BlockItem>
+                <BlockItem type="none"></BlockItem>
                 <BlockItem type="preamp"></BlockItem>
                 <BlockItem type="cab"></BlockItem>
                 <BlockItem type="ir"></BlockItem>
