@@ -433,7 +433,7 @@ var hxPreset = {
     "device_version" : 35717152
   },
   "schema" : "L6Preset"
-}; 
+};
 
 var hxModels = {
     // TODO: Add all models and type mappings
@@ -483,7 +483,7 @@ var hxModels = {
     "HD2_DistDeezOneVintage": {
         "type": "dist",
         "name": "Deez One Vintage"
-    },   
+    },
     "HD2_DistDeezOneMod": {
         "type": "dist",
         "name": "Deez One Mod"
@@ -621,7 +621,7 @@ var hxModels = {
     },
 
     /* Amps */
-    
+
     "HD2_AmpWhoWatt100": {
         "type":"amp",
         "name":"WhoWatt 100"
@@ -914,9 +914,9 @@ var hxModels = {
         "type":"amp",
         "name":"Busy One Jump"
     },
-    
+
     /* Preamps */
-    
+
     "HD2_PreampWhoWatt100": {
         "type":"preamp",
         "name":"WhoWatt 100"
@@ -1217,144 +1217,144 @@ var hxModels = {
     /* Delays */
 
     "HD2_DelaySimpleDelay": {
-        "type": "delay", 
-        "name": "Simple Delay" 
+        "type": "delay",
+        "name": "Simple Delay"
     },
-    "HD2_DelayModChorusEcho": { 
-        "type": "delay", 
-        "name": "Mod/Cho Echo" 
+    "HD2_DelayModChorusEcho": {
+        "type": "delay",
+        "name": "Mod/Cho Echo"
     },
-    "HD2_DelayDualDelay": { 
-        "type": "delay", 
-        "name": "Dual Delay" 
+    "HD2_DelayDualDelay": {
+        "type": "delay",
+        "name": "Dual Delay"
     },
-    "HD2_DelayMultitap4": { 
-        "type": "delay", 
-        "name": "Multitap 4" 
+    "HD2_DelayMultitap4": {
+        "type": "delay",
+        "name": "Multitap 4"
     },
-    "HD2_DelayMultitap6": { 
-        "type": "delay", 
-        "name": "Multitap 6" 
+    "HD2_DelayMultitap6": {
+        "type": "delay",
+        "name": "Multitap 6"
     },
-    "HD2_DelayPingPong": { 
-        "type": "delay", 
-        "name": "Ping Pong" 
+    "HD2_DelayPingPong": {
+        "type": "delay",
+        "name": "Ping Pong"
     },
-    "HD2_DelaySweepEcho": { 
-        "type": "delay", 
-        "name": "Sweep Echo" 
+    "HD2_DelaySweepEcho": {
+        "type": "delay",
+        "name": "Sweep Echo"
     },
-    "HD2_DelayDuckedDelay": { 
-        "type": "delay", 
-        "name": "Ducked Delay" 
+    "HD2_DelayDuckedDelay": {
+        "type": "delay",
+        "name": "Ducked Delay"
     },
-    "HD2_DelayReverseDelay": { 
-        "type": "delay", 
-        "name": "Reverse Delay" 
+    "HD2_DelayReverseDelay": {
+        "type": "delay",
+        "name": "Reverse Delay"
     },
-    "HD2_DelayVintageDigitalV2": { 
-        "type": "delay", 
-        "name": "Vintage Digital" 
+    "HD2_DelayVintageDigitalV2": {
+        "type": "delay",
+        "name": "Vintage Digital"
     },
-    "HD2_DelaySwellVintageDigital": { 
-        "type": "delay", 
+    "HD2_DelaySwellVintageDigital": {
+        "type": "delay",
         "name": "Vintage Swell"
     },
-    "HD2_DelayPitch": { 
-        "type": "delay", 
-        "name": "Pitch Echo" 
+    "HD2_DelayPitch": {
+        "type": "delay",
+        "name": "Pitch Echo"
     },
     "HD2_DelayTransistorTape": {
-        "type": "delay", 
+        "type": "delay",
         "name": "Transistor Tape"
     },
-    "HD2_DelayCosmosEcho": { 
+    "HD2_DelayCosmosEcho": {
         "type": "delay",
-        "name": "Cosmos Echo" 
+        "name": "Cosmos Echo"
     },
-    "HD2_DelayHarmonyDelay": { 
-        "type": "delay", 
-        "name": "Harmony Delay" 
+    "HD2_DelayHarmonyDelay": {
+        "type": "delay",
+        "name": "Harmony Delay"
     },
-    "HD2_DelayBucketBrigade": { 
-        "type": "delay", 
-        "name": "Bucket Brigade" 
+    "HD2_DelayBucketBrigade": {
+        "type": "delay",
+        "name": "Bucket Brigade"
     },
-    "HD2_DelayAdriaticDelay": { 
-        "type": "delay", 
-        "name": "Adriatic Delay" 
+    "HD2_DelayAdriaticDelay": {
+        "type": "delay",
+        "name": "Adriatic Delay"
     },
-    "HD2_DelaySwellAdriatic": { 
+    "HD2_DelaySwellAdriatic": {
         "type": "delay",
         "name": "Adriatic Swell"
     },
-    "HD2_DelayElephantMan": { 
-        "type": "delay", 
-        "name": "Elephant Man" 
+    "HD2_DelayElephantMan": {
+        "type": "delay",
+        "name": "Elephant Man"
     },
-    "HD2_DelayMultiPass": { 
-        "type": "delay", 
+    "HD2_DelayMultiPass": {
+        "type": "delay",
         "name": "Multi Pass"
     },
-    "HD2_DL4PingPong": { 
-        "type": "delay", 
-        "name": "Ping Pong" 
-    },
-    "HD2_DL4DynamicDelayStereo": { 
+    "HD2_DL4PingPong": {
         "type": "delay",
-        "name": "Dynamic" 
+        "name": "Ping Pong"
+    },
+    "HD2_DL4DynamicDelayStereo": {
+        "type": "delay",
+        "name": "Dynamic"
     },
     "HD2_DL4StereoDelay": {
-        "type": "delay", 
-        "name": "Stereo" 
-    },
-    "HD2_DL4DigDelay": { 
         "type": "delay",
-        "name": "Digital" 
+        "name": "Stereo"
     },
-    "HD2_DL4DigDelayWithMod": { 
-        "type": "delay", 
+    "HD2_DL4DigDelay": {
+        "type": "delay",
+        "name": "Digital"
+    },
+    "HD2_DL4DigDelayWithMod": {
+        "type": "delay",
         "name": "Dig w/Mod"
     },
-    "HD2_DL4Reverse": { 
-        "type": "delay", 
+    "HD2_DL4Reverse": {
+        "type": "delay",
         "name": "Reverse"
     },
     "HD2_DL4LowResDelay": {
-        "type": "delay", 
+        "type": "delay",
         "name": "Lo Res"
     },
-    "HD2_DL4TubeEchoStereo": { 
-        "type": "delay", 
-        "name": "Tube Echo" 
+    "HD2_DL4TubeEchoStereo": {
+        "type": "delay",
+        "name": "Tube Echo"
     },
-    "HD2_DL4TapeEchoStereo": { 
-        "type": "delay", 
-        "name": "Tape Echo" 
+    "HD2_DL4TapeEchoStereo": {
+        "type": "delay",
+        "name": "Tape Echo"
     },
     "HD2_DL4SweepEchoStereo": {
         "type": "delay",
         "name": "Sweep Echo"
     },
-    "HD2_DL4EchoPlatterStereo": { 
-        "type": "delay", 
+    "HD2_DL4EchoPlatterStereo": {
+        "type": "delay",
         "name": "Echo Platter"
     },
     "HD2_DL4AnalogDelayStereo": {
         "type": "delay",
-        "name": "Analog Echo" 
+        "name": "Analog Echo"
     },
     "HD2_DL4AnalogDelayStereoMod": {
-        "type": "delay", 
-        "name": "Analog w/Mod" 
+        "type": "delay",
+        "name": "Analog w/Mod"
     },
-    "HD2_DL4AutoVolStereo": { 
-        "type": "delay", 
+    "HD2_DL4AutoVolStereo": {
+        "type": "delay",
         "name": "Auto-Vol Echo"
     },
-    "HD2_DL4MultiheadStereo": { 
-        "type": "delay", 
-        "name": "Multi-Head" 
+    "HD2_DL4MultiheadStereo": {
+        "type": "delay",
+        "name": "Multi-Head"
     },
 
     /* Mod */
@@ -1450,7 +1450,7 @@ var hxModels = {
     "HD2_PhaserUbiquitousVibe": {
         "type": "mod",
         "name": "Ubiquitous Vibe"
-    },  
+    },
 
     "HD2_MM4RingModulator": {
         "type": "mod",
@@ -1549,53 +1549,53 @@ var hxModels = {
     },
     "HD2_ImpulseResponse2048": {
         "type": "ir",
-        "name": "IR 2048" 
+        "name": "IR 2048"
     },
 
     /* Cabs */
-            
-    "HD2_Cab1x6x9SoupProEllipse": { 
-        "type": "cab", 
-        "name": "Soup Pro Ellipse" 
+
+    "HD2_Cab1x6x9SoupProEllipse": {
+        "type": "cab",
+        "name": "Soup Pro Ellipse"
     },
     "HD2_Cab1x8SmallTweed": {
         "type": "cab",
-        "name": "1x8 Small Tweed" 
+        "name": "1x8 Small Tweed"
     },
     "HD2_Cab1x12FieldCoil": {
-        "type": "cab", 
+        "type": "cab",
         "name": "1x12 Field Coil"
     },
     "HD2_Cab1x12USDeluxe": {
-        "type": "cab", 
-        "name": "1x12 US Deluxe" 
+        "type": "cab",
+        "name": "1x12 US Deluxe"
     },
-    "HD2_Cab1x12Celest12H": { 
-        "type": "cab", 
+    "HD2_Cab1x12Celest12H": {
+        "type": "cab",
         "name": "1x12 Celest 12H"
     },
-    "HD2_Cab1x12BlueBell": { 
-        "type": "cab", 
+    "HD2_Cab1x12BlueBell": {
+        "type": "cab",
         "name": "1x12 Blue Bell"
     },
     "HD2_Cab1x12Lead80": {
-        "type": "cab", 
-        "name": "1x12 Lead 80" 
+        "type": "cab",
+        "name": "1x12 Lead 80"
     },
-    "HD2_Cab1x12CaliExt": { 
-        "type": "cab", 
+    "HD2_Cab1x12CaliExt": {
+        "type": "cab",
         "name": "1x12 Cali Ext"
     },
-    "HD2_Cab1x12CaliIV": { 
-        "type": "cab", 
-        "name": "1x12 Cali IV" 
+    "HD2_Cab1x12CaliIV": {
+        "type": "cab",
+        "name": "1x12 Cali IV"
     },
-    "HD2_Cab1x12DelSol": { 
-        "type": "cab", 
-        "name": "1x12 Del Sol" 
+    "HD2_Cab1x12DelSol": {
+        "type": "cab",
+        "name": "1x12 Del Sol"
     },
-    "HD2_Cab1x12MatchH30": { 
-        "type": "cab", 
+    "HD2_Cab1x12MatchH30": {
+        "type": "cab",
         "name": "1x12 Match H30"
     },
     "HD2_Cab1x12MatchG25": {
@@ -1603,217 +1603,217 @@ var hxModels = {
         "name": "1x12 Match G25"
     },
     "HD2_Cab2x12DoubleC12N": {
-        "type": "cab", 
+        "type": "cab",
         "name": "2x12 Double C12N"
     },
     "HD2_Cab2x12MailC12Q": {
-        "type": "cab", 
+        "type": "cab",
         "name": "2x12 Mail C12Q"
     },
-    "HD2_Cab2x12Interstate": { 
-        "type": "cab", 
+    "HD2_Cab2x12Interstate": {
+        "type": "cab",
         "name": "2x12 Interstate"
     },
-    "HD2_Cab2x12JazzRivet": { 
-        "type": "cab", 
-        "name": "2x12 Jazz Rivet" 
+    "HD2_Cab2x12JazzRivet": {
+        "type": "cab",
+        "name": "2x12 Jazz Rivet"
     },
-    "HD2_Cab2x12SilverBell": { 
-        "type": "cab", 
-        "name": "2x12 Silver Bell" 
+    "HD2_Cab2x12SilverBell": {
+        "type": "cab",
+        "name": "2x12 Silver Bell"
     },
     "HD2_Cab2x12BlueBell": {
-        "type": "cab", 
-        "name": "2x12 Blue Bell" 
+        "type": "cab",
+        "name": "2x12 Blue Bell"
     },
-    "HD2_Cab4x10TweedP10R": { 
-        "type": "cab", 
+    "HD2_Cab4x10TweedP10R": {
+        "type": "cab",
         "name": "4x10 Tweed P10R"
     },
-    "HD2_Cab4x12WhoWatt100": { 
-        "type": "cab", 
+    "HD2_Cab4x12WhoWatt100": {
+        "type": "cab",
         "name": "4x12 WhoWatt 100"
     },
-    "HD2_Cab4x12MandarinEM": { 
-        "type": "cab", 
+    "HD2_Cab4x12MandarinEM": {
+        "type": "cab",
         "name": "4x12 Mandarin EM"
     },
     "HD2_Cab4x12Greenback25": {
-        "type": "cab", 
+        "type": "cab",
         "name": "4x12 Greenback25"
     },
     "HD2_Cab4x12Greenback20": {
-        "type": "cab", 
+        "type": "cab",
         "name": "4x12 Greenback20"
     },
-    "HD2_Cab4x12Blackback30": { 
-        "type": "cab", 
-        "name": "4x12 Blackback30" 
+    "HD2_Cab4x12Blackback30": {
+        "type": "cab",
+        "name": "4x12 Blackback30"
     },
-    "HD2_Cab4x121960T75": { 
-        "type": "cab", 
-        "name": "4x12 1960 T75" 
+    "HD2_Cab4x121960T75": {
+        "type": "cab",
+        "name": "4x12 1960 T75"
     },
-    "HD2_Cab4x12UberV30": { 
-        "type": "cab", 
+    "HD2_Cab4x12UberV30": {
+        "type": "cab",
         "name": "4x12 Uber V30"
     },
-    "HD2_Cab4x12UberT75": { 
-        "type": "cab", 
+    "HD2_Cab4x12UberT75": {
+        "type": "cab",
         "name": "4x12 Uber T75"
     },
     "HD2_Cab4X12CaliV30": {
-        "type": "cab", 
-        "name": "4x12 Cali V30" 
+        "type": "cab",
+        "name": "4x12 Cali V30"
     },
-    "HD2_Cab4x12XXLV30": { 
-        "type": "cab", 
+    "HD2_Cab4x12XXLV30": {
+        "type": "cab",
         "name": "4x12 XXL V30"
     },
-    "HD2_Cab4x12SoloLeadEM": { 
-        "type": "cab", 
+    "HD2_Cab4x12SoloLeadEM": {
+        "type": "cab",
         "name": "4x12 SoloLead EM"
     },
-    "HD2_Cab1x15TucknGo": { 
-        "type": "cab", 
+    "HD2_Cab1x15TucknGo": {
+        "type": "cab",
         "name": "1x15 Tuck n' Go"
     },
-    "HD2_Cab1x18DelSol": { 
+    "HD2_Cab1x18DelSol": {
         "type": "cab",
         "name": "1x18 Del Sol"
     },
-    "HD2_Cab1x18WoodyBlue": { 
+    "HD2_Cab1x18WoodyBlue": {
         "type": "cab", "name": "1x18 Woody Blue"
     },
-    "HD2_Cab2x15Brute": { 
+    "HD2_Cab2x15Brute": {
         "type": "cab", "name": "2x15 Brute"
     },
-    "HD2_Cab4x10Rhino": { 
+    "HD2_Cab4x10Rhino": {
         "type": "cab", "name": "4x10 Rhino"
     },
-    "HD2_Cab6x10CaliPower": { 
+    "HD2_Cab6x10CaliPower": {
         "type": "cab", "name": "6x10 Cali Power"
     },
     "HD2_Cab8x10SVBeast": {
         "type": "cab", "name": "8x10 SV Beast"
     },
 
-    /* Pitch */ 
+    /* Pitch */
 
-    "HD2_PitchPitchWham": { 
-        "type": "pitch", 
+    "HD2_PitchPitchWham": {
+        "type": "pitch",
         "name": "Pitch Wham"
     },
-    "HD2_PitchTwinHarmony": { 
-        "type": "pitch", 
+    "HD2_PitchTwinHarmony": {
+        "type": "pitch",
         "name": "Twin Harmony"
     },
-    "HD2_PitchSimplePitch": { 
-        "type": "pitch", "name": 
+    "HD2_PitchSimplePitch": {
+        "type": "pitch", "name":
         "Simple Pitch"
     },
     "HD2_PitchDualPitch": {
-        "type": "pitch", 
-        "name": "Dual Pitch" 
+        "type": "pitch",
+        "name": "Dual Pitch"
     },
-    "HD2_SynthSubtractive": { 
-        "type": "pitch", 
-        "name": "3 OSC Synth" 
+    "HD2_SynthSubtractive": {
+        "type": "pitch",
+        "name": "3 OSC Synth"
     },
     "HD2_Synth3NoteGenerator": {
-        "type": "pitch", 
+        "type": "pitch",
         "name": "3 Note Generator"
     },
     "HD2_Synth4OSCGenerator": {
         "type": "pitch",
-        "name": "4 OSC Generator" 
+        "name": "4 OSC Generator"
     },
-    "HD2_DM4BassOctaver": { 
-        "type": "pitch", 
-        "name": "Bass Octaver" 
+    "HD2_DM4BassOctaver": {
+        "type": "pitch",
+        "name": "Bass Octaver"
     },
-    "HD2_M13TwoVoiceHarmony": { 
-        "type": "pitch", 
+    "HD2_M13TwoVoiceHarmony": {
+        "type": "pitch",
         "name": "Smart Harmony"
     },
     "HD2_FM4OctiSynth": {
-        "type": "pitch", 
-        "name": "Octi Synth" 
+        "type": "pitch",
+        "name": "Octi Synth"
     },
     "HD2_FM4SynthOMatic": {
-        "type": "pitch", 
+        "type": "pitch",
         "name": "Synth O Matic"
     },
     "HD2_FM4AttackSynth": {
-        "type": "pitch", 
+        "type": "pitch",
         "name": "Attack Synth"
     },
     "HD2_FM4SynthString": {
-        "type": "pitch", 
-        "name": "Synth String" 
+        "type": "pitch",
+        "name": "Synth String"
     },
     "HD2_FM4Growler": {
-        "type": "pitch", 
-        "name": "Growler" 
+        "type": "pitch",
+        "name": "Growler"
     },
 
     /* Filter */
 
-    "HD2_FilterMutantFilter": { 
-        "type": "filter", 
-        "name": "Mutant Filter" 
+    "HD2_FilterMutantFilter": {
+        "type": "filter",
+        "name": "Mutant Filter"
     },
     "HD2_FilterMysterFilter": {
-        "type": "filter", 
-        "name": "Mystery Filter" 
+        "type": "filter",
+        "name": "Mystery Filter"
     },
     "HD2_FilterAutoFilter": {
-        "type": "filter", 
+        "type": "filter",
         "name": "Autofilter"
     },
     "HD2_FM4VoiceBox": {
-        "type": "filter", 
-        "name": "Voice Box" 
+        "type": "filter",
+        "name": "Voice Box"
     },
-    "HD2_FM4VTron": { 
-        "type": "filter", 
-        "name": "V Tron" 
+    "HD2_FM4VTron": {
+        "type": "filter",
+        "name": "V Tron"
     },
-    "HD2_FM4QFilter": { 
-        "type": "filter", 
-        "name": "Q Filter" 
+    "HD2_FM4QFilter": {
+        "type": "filter",
+        "name": "Q Filter"
     },
-    "HD2_FM4Seeker": { 
-        "type": "filter", 
+    "HD2_FM4Seeker": {
+        "type": "filter",
         "name": "Seeker"
     },
     "HD2_FM4ObiWah": {
-        "type": "filter", 
-        "name": "Obi Wah" 
+        "type": "filter",
+        "name": "Obi Wah"
     },
-    "HD2_FM4TronUp": { 
-        "type": "filter", 
-        "name": "Tron Up" 
+    "HD2_FM4TronUp": {
+        "type": "filter",
+        "name": "Tron Up"
     },
     "HD2_FM4TronDown": {
-        "type": "filter", 
-        "name": "Tron Down" 
+        "type": "filter",
+        "name": "Tron Down"
     },
-    "HD2_FM4Throbber": { 
-        "type": "filter", 
-        "name": "Throbber" 
+    "HD2_FM4Throbber": {
+        "type": "filter",
+        "name": "Throbber"
     },
     "HD2_FM4SlowFilter": {
-        "type": "filter", 
+        "type": "filter",
         "name": "Slow Filter"
     },
-    "HD2_FM4SpinCycle": { 
-        "type": "filter", 
+    "HD2_FM4SpinCycle": {
+        "type": "filter",
         "name": "Spin Cycle"
     },
     "HD2_FM4CometTrails": {
-        "type": "filter", 
-        "name": "Comet Trails" 
+        "type": "filter",
+        "name": "Comet Trails"
     },
 
     /* Comp */
@@ -1883,44 +1883,44 @@ var hxModels = {
 
     "HD2_VolPanVol": {
         "type": "vol-pan",
-        "name": "Volume" 
+        "name": "Volume"
     },
-    "HD2_VolPanGain": { 
-        "type": "vol-pan", 
-        "name": "Gain" 
+    "HD2_VolPanGain": {
+        "type": "vol-pan",
+        "name": "Gain"
     },
     "HD2_VolPanPan": {
         "type": "vol-pan",
-        "name": "Pan" 
+        "name": "Pan"
     },
     "HD2_VolPanStereoWidth": {
-        "type": "vol-pan", 
+        "type": "vol-pan",
         "name": "Stereo Width"
     },
 
     /* Looper */
 
-    "HD2_Looper": { 
-        "type": "looper", 
-        "name": "6 Switch Looper" 
-    },
-    "HD2_LooperOneSwitch": { 
+    "HD2_Looper": {
         "type": "looper",
-        "name": "1 Switch Looper" 
+        "name": "6 Switch Looper"
+    },
+    "HD2_LooperOneSwitch": {
+        "type": "looper",
+        "name": "1 Switch Looper"
     },
 
     /* Send-Return */
 
-    "HD2_SendMono1": { 
-        "type": "send-return", 
-        "name": "Send 1" 
+    "HD2_SendMono1": {
+        "type": "send-return",
+        "name": "Send 1"
     },
-    "HD2_SendMono2": { 
-        "type": "send-return", 
+    "HD2_SendMono2": {
+        "type": "send-return",
         "name": "Send 2"
     },
-    "HD2_SendMono3": { 
-        "type": "send-return", 
+    "HD2_SendMono3": {
+        "type": "send-return",
         "name": "Send 3"
     },
     "HD2_SendMono4": {
@@ -1928,56 +1928,56 @@ var hxModels = {
         "name": "Send 4"
     },
     "HD2_ReturnMono1": {
-        "type": "send-return", 
+        "type": "send-return",
         "name": "Return 1"
     },
     "HD2_ReturnMono2": {
         "type": "send-return",
-        "name": "Return 2" 
+        "name": "Return 2"
     },
-    "HD2_ReturnMono3": { 
+    "HD2_ReturnMono3": {
         "type": "send-return",
-        "name": "Return 3" 
+        "name": "Return 3"
     },
-    "HD2_ReturnMono4": { 
+    "HD2_ReturnMono4": {
         "type": "send-return",
-        "name": "Return 4" 
+        "name": "Return 4"
     },
     "HD2_FXLoopMono1": {
         "type": "send-return",
-        "name": "FX Loop 1" 
+        "name": "FX Loop 1"
     },
     "HD2_FXLoopMono2": {
-        "type": "send-return", 
+        "type": "send-return",
         "name": "FX Loop 2"
     },
     "HD2_FXLoopMono3": {
         "type": "send-return",
         "name": "FX Loop 3"
     },
-    "HD2_FXLoopMono4": { 
-        "type": "send-return", 
+    "HD2_FXLoopMono4": {
+        "type": "send-return",
         "name": "FX Loop 4"
     },
     "HD2_SendStereo1_2": {
-        "type": "send-return", 
-        "name": "Send 1/2" 
+        "type": "send-return",
+        "name": "Send 1/2"
     },
     "HD2_SendStereo3_4": {
         "type": "send-return",
         "name": "Send 3/4"
     },
-    "HD2_ReturnStereo1_2": { 
-        "type": "send-return", 
-        "name": "Return 1/2" 
-    },
-    "HD2_ReturnStereo3_4": { 
+    "HD2_ReturnStereo1_2": {
         "type": "send-return",
-        "name": "Return 3/4" 
+        "name": "Return 1/2"
+    },
+    "HD2_ReturnStereo3_4": {
+        "type": "send-return",
+        "name": "Return 3/4"
     },
     "HD2_FXLoopStereo1_2": {
         "type": "send-return",
-        "name": "FX Loop 1/2" 
+        "name": "FX Loop 1/2"
     },
     "HD2_FXLoopStereo3_4": {
         "type": "send-return",
@@ -1986,150 +1986,150 @@ var hxModels = {
 
     /* Reverb */
 
-    "HD2_ReverbGlitz": { 
+    "HD2_ReverbGlitz": {
         "type": "reverb",
-        "name": "Glitz" 
+        "name": "Glitz"
     },
-    "HD2_ReverbGanymede": { 
+    "HD2_ReverbGanymede": {
         "type": "reverb",
-        "name": "Ganymede" 
+        "name": "Ganymede"
     },
     "HD2_ReverbSearchlights": {
-        "type": "reverb", 
-        "name": "Searchlights" 
+        "type": "reverb",
+        "name": "Searchlights"
     },
     "HD2_ReverbPlateaux": {
-        "type": "reverb", 
-        "name": "Plateaux" 
+        "type": "reverb",
+        "name": "Plateaux"
     },
-    "HD2_ReverbDoubleTank": { 
+    "HD2_ReverbDoubleTank": {
         "type": "reverb",
         "name": "Double Tank"
     },
-    "HD2_ReverbPlate": { 
-        "type": "reverb", 
-        "name": "Plate" 
+    "HD2_ReverbPlate": {
+        "type": "reverb",
+        "name": "Plate"
     },
     "HD2_ReverbRoom": {
-        "type": "reverb", 
+        "type": "reverb",
         "name": "Room"
     },
     "HD2_ReverbChamber": {
         "type": "reverb",
-        "name": "Chamber" 
+        "name": "Chamber"
     },
-    "HD2_ReverbHall": { 
-        "type": "reverb", 
-        "name": "Hall" 
+    "HD2_ReverbHall": {
+        "type": "reverb",
+        "name": "Hall"
     },
-    "HD2_ReverbEcho": { 
-        "type": "reverb", 
-        "name": "Echo" 
+    "HD2_ReverbEcho": {
+        "type": "reverb",
+        "name": "Echo"
     },
-    "HD2_ReverbTile": { 
-        "type": "reverb", 
-        "name": "Tile" 
+    "HD2_ReverbTile": {
+        "type": "reverb",
+        "name": "Tile"
     },
     "HD2_ReverbCave": {
-        "type": "reverb", 
-        "name": "Cave" 
+        "type": "reverb",
+        "name": "Cave"
     },
-    "HD2_ReverbDucking": { 
-        "type": "reverb", 
+    "HD2_ReverbDucking": {
+        "type": "reverb",
         "name": "Ducking"
     },
-    "HD2_ReverbOcto": { 
+    "HD2_ReverbOcto": {
         "type": "reverb",
         "name": "Octo"
     },
     "HD2_Reverb63Spring": {
-        "type": "reverb", 
-        "name": "'63 Spring" 
+        "type": "reverb",
+        "name": "'63 Spring"
     },
-    "HD2_ReverbSpring": { 
-        "type": "reverb", 
+    "HD2_ReverbSpring": {
+        "type": "reverb",
         "name": "Spring"
     },
-    "HD2_ReverbParticle": { 
+    "HD2_ReverbParticle": {
         "type": "reverb",
-        "name": "Particle Verb" 
+        "name": "Particle Verb"
     },
 
     /* Wah */
 
-    "HD2_WahUKWah846": { 
-        "type": "wah", 
-        "name": "UK Wah 846" 
+    "HD2_WahUKWah846": {
+        "type": "wah",
+        "name": "UK Wah 846"
     },
     "HD2_WahTeardrop310": {
         "type": "wah",
         "name": "Teardrop 310"
     },
     "HD2_WahFassel": {
-        "type": "wah", 
+        "type": "wah",
         "name": "Fassel"
     },
     "HD2_WahWeeper": {
-        "type": "wah", 
-        "name": "Weeper" 
+        "type": "wah",
+        "name": "Weeper"
     },
     "HD2_WahChrome": {
-        "type": "wah", 
+        "type": "wah",
         "name": "Chrome"
     },
-    "HD2_WahChromeCustom": { 
-        "type": "wah", 
+    "HD2_WahChromeCustom": {
+        "type": "wah",
         "name": "Chrome Custom"
     },
     "HD2_WahThroaty": {
-        "type": "wah", 
-        "name": "Throaty" 
+        "type": "wah",
+        "name": "Throaty"
     },
     "HD2_WahVettaWah": {
-        "type": "wah", 
+        "type": "wah",
         "name": "Vetta Wah"
     },
     "HD2_WahColorful": {
-        "type": "wah", 
-        "name": "Colorful" 
+        "type": "wah",
+        "name": "Colorful"
     },
     "HD2_WahConductor": {
-        "type": "wah", 
-        "name": "Conductor" 
+        "type": "wah",
+        "name": "Conductor"
     },
-    
+
     /* Ins, Outs, Splits, and Joins */
-    
+
     "HD2_AppDSPFlowSplitY": {
-        "type": "split", 
-        "name": "Split Y" 
+        "type": "split",
+        "name": "Split Y"
     },
     "HD2_AppDSPFlowSplitAB": {
-        "type": "split", 
-        "name": "Split A/B" 
+        "type": "split",
+        "name": "Split A/B"
     },
     "HD2_AppDSPFlowSplitXOver": {
-        "type": "split", 
-        "name": "Split Crossover" 
+        "type": "split",
+        "name": "Split Crossover"
     },
     "HD2_AppDSPFlowJoin": {
-        "type": "join", 
-        "name": "Mixer" 
+        "type": "join",
+        "name": "Mixer"
     },
     "HD2_AppDSPFlow1Input": {
-        "type": "input", 
-        "name": "Flow 1 Input" 
+        "type": "input",
+        "name": "Flow 1 Input"
     },
     "HD2_AppDSPFlow2Input": {
-        "type": "input", 
-        "name": "Flow 2 Input" 
+        "type": "input",
+        "name": "Flow 2 Input"
     },
     "HD2_AppDSPFlowOutput": {
-        "type": "output", 
-        "name": "Output" 
-    }    
+        "type": "output",
+        "name": "Output"
+    }
 };
-        
+
 var hxLabels = {
     "@bypassvolume": "Bypass Volume",
     "@cab": "Cab",

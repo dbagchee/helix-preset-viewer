@@ -24,7 +24,8 @@
         'block--delay': type === 'delay',
         'block--split': type === 'split',
         'block--join': type === 'join',
-        'block--is-active': isActive === 1, 
+        'block--is-active': isActive === 1,
+        'block--is-enabled': enabled === true,
         'block--position-1': position === 0,
         'block--position-2': position === 1,
         'block--position-3': position === 2,
@@ -141,11 +142,11 @@ export default {
                     "name": "Merge",
                     "icon": "far fa-arrow-alt-circle-up"
                 }
-                
+
             }
         }
     },
-    props: ['type', 'id', 'currentBlock', 'position'],
+    props: ['type', 'id', 'currentBlock', 'position', 'enabled'],
     methods: {
         displayParameters: function (id) {
             /* remove active from all blocks, probably can be improved */
@@ -180,10 +181,11 @@ export default {
     width: 50px;
     height: 50px;
     margin: 0 auto 5px auto;
-    border: 1px solid #666;
+    border: 3px solid #666;
     border-radius: 6px;
     font-size: 24px;
     background-color: #000;
+    opacity: 0.6;
 }
 
 .block__name {
@@ -192,6 +194,15 @@ export default {
 
 .block--is-active .block__icon {
     border-color: #fff;
+}
+
+.block--is-enabled .block__icon {
+  border-color: #ccc;
+  opacity: 1;
+}
+
+.block--is-enabled .block__icon i {
+  opacity: 1;
 }
 
 .block--input,
@@ -237,15 +248,15 @@ export default {
 .block--position-8 {
     order: 8;
 }
-    
+
 .block--position-9 {
     order: 9;
 }
-    
+
 .block--position-10 {
     order: 10;
 }
-    
+
 .block--position-20 {
     order: 20;
 }
@@ -299,19 +310,19 @@ export default {
 
 .block--split .block__icon,
 .block--join .block__icon {
-    
+
 }
 
 .block--none {
     width: 52px;
     height: 52px;
-} 
+}
 
 .block--none .block__icon {
-   display: none; 
-} 
+   display: none;
+}
 
 .block--none .block__name {
-   display: none; 
-} 
+   display: none;
+}
 </style>
