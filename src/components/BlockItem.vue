@@ -192,13 +192,13 @@ export default {
     font-size: 12px;
 }
 
-.block--is-active .block__icon {
-    border-color: #fff;
+.block--is-enabled .block__icon {
+  border-color: #aaa;
+  opacity: 1;
 }
 
-.block--is-enabled .block__icon {
-  border-color: #ccc;
-  opacity: 1;
+.block--is-active .block__icon {
+    border-color: #fff;
 }
 
 .block--is-enabled .block__icon i {
